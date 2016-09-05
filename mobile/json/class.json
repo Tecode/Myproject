@@ -1,0 +1,51 @@
+{
+
+    "data":
+
+        [
+
+        {
+
+            "productname": "全部分类",
+            "defaultimg": "http://119.29.138.14:88/Content/tempfile/131003436286666597.png",
+            "selectedimg": "http://119.29.138.14:88/Content/tempfile/131003436284879602.png",
+            "defaulttype": "1",
+            "categorycode": "225eP1455870037"
+
+        }, {
+            "productname": "小龙虾",
+            "defaultimg": "http://119.29.138.14:88/Content/tempfile/131002535623923526.png",
+            "selectedimg": "http://119.29.138.14:88/Content/tempfile/131002535636112351.png",
+            "defaulttype": "1",
+            "categorycode": "pAEaR1456380178"
+
+        }, {
+
+            "productname": "串串香",
+            "defaultimg": "http://images.udianhuo.com/Content/tempfile/131002535623923526.png",
+            "selectedimg": "http://images.udianhuo.com/Content/tempfile/131002535636112351.png",
+            "defaulttype": "1",
+            "categorycode": "acanQ1456815107"
+
+        }, {
+
+            "productname": "清油火锅",
+            "defaultimg": "http://119.29.138.14:88/Content/tempfile/131002535623923526.png",
+            "selectedimg": "http://119.29.138.14:88/Content/tempfile/131002535636112351.png",
+            "defaulttype": "0",
+            "categorycode": "RM7SU1456128631"
+
+        },
+
+        {
+            "productname": "测111",
+            "defaultimg": "http://images.udianhuo.com/Content/tempfile/131006018736774048.jpg",
+            "selectedimg": "http://images.udianhuo.com/Content/tempfile/131006018744009913.jpg",
+            "defaulttype": "0",
+            "categorycode": "VQGEF1456976177"
+        }
+    ],
+    "code":0,
+    "msg":"成功"
+
+}

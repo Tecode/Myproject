@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" href="static/js/lib/mobile/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <title>有点火</title>
+    <style type="text/css" media="screen">
+
+    </style>
+</head>
+
+<body>
+    <div class="page-group ms-controller" ms-controller="page">
+        <div class="page page-current">
+            <div class="page-content">
+                <div class="content-block">
+                    <div class="class-content">
+                        <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100">
+                            <div class="list-block" style="margin:0;padding:0;">
+                                <div style="margin-bottom:10px;">
+                                    <img src="static/images/bg_danpin@2x.png" width="100%" alt="">
+                                </div>
+                                <ul class="list-block commodity-list class-commodity-list list-container">
+                                    <li class="commodity-item" ms-repeat="productListData">
+                                        <a class="commodity-link" ms-attr-href="'productinfo.html?pcode=' + el.pcode + '&skucode=' + el.skucode">
+                                            <div class="commodity-image">
+                                                <img ms-attr-src="el.imgurl != '' ? el.imgurl : 'static/images/product_defalut.png'" alt="">
+                                            </div>
+                                            <h3 class="commodity-title">{{el.productname}}</h3>
+                                            <div class="commodity-info" style="height:auto;">
+                                                <div class="price">￥{{el.price}}</div>
+                                                <div class="cart">
+                                                    <div ms-click="onBuynow($event)" class="buynow">立即购买</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="commodity-item">
+                                        <a class="commodity-link" href="#">
+                                            <div class="commodity-image">
+                                                <img src="images/shangpin640.jpg" alt="">
+                                            </div>
+                                            <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                            <div class="commodity-info">
+                                                <div class="price">￥33.3</div>
+                                                <div class="cart">
+                                                    <img class="icon-cart" src="images/fenlei_gouwuche@2x.png" alt="">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="infinite-scroll-preloader">
+                                <div class="preloader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['sm', 'avalon', 'util'], function(sm, avalon, util) {
+        var url = {
+            getClass: "json/class.json",
+            getProduct: 'json/productlist.json'
+        };
+
+
+        var c_pageClass = avalon.define({
+            $id: 'page',
+            productListData: [],
+            onBuynow:function(event){
+                event.stopPropagation();
+                event.preventDefault();
+            }
+        });
+
+        avalon.scan();
+
+        var getProduct = function(postdata) {
+            util.ajax(url.getProduct, 'get', postdata, function(result) {
+                $('.infinite-scroll-preloader').hide();
+                if (result && result.code == '0') {
+                    if (!result.data || result.data.length == 0) {
+                        return;
+                    }
+                    classPage.pageindex++;
+                    c_pageClass.productListData.pushArray(result.data);
+
+                }
+            })
+        }
+
+        var classPage = {
+            pageindex: 1,
+            pagesize: 20,
+            pagemax: 0
+        }
+
+        getProduct({
+            pageindex: classPage.pageindex,
+            pagesize: classPage.pagesize,
+            sortname: '',
+            strwhere: ''
+        });
+
+
+
+        $.init();
+
+
+
+        var loading = false;
+
+
+        // 注册'infinite'事件处理函数
+        $(document).on('infinite', '.infinite-scroll-bottom', function() {
+
+            // 如果正在加载，则退出
+            if (loading) return;
+
+            $('.infinite-scroll-preloader').show();
+            // 设置flag
+            loading = true;
+
+            // 模拟1s的加载过程
+            setTimeout(function() {
+                // 重置加载flag
+                loading = false;
+
+                // 添加新条目
+                getProduct({
+                    pageindex: classPage.pageindex,
+                    pagesize: classPage.pagesize,
+                    sortname: '',
+                    strwhere: c_pageClass.activeClass
+                });
+
+
+                // 更新最后加载的序号
+                lastIndex = $('.list-container li').length;
+                //容器发生改变,如果是js滚动，需要刷新滚动
+                $.refreshScroller();
+            }, 1000);
+        });
+
+
+
+
+
+    })
+    </script>
+</body>
+
+</html>

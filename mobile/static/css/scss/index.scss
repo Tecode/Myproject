@@ -1,0 +1,371 @@
+/**
+ * 变量
+ */
+$borderColor:#eee;//边框颜色
+$bgColor:#eee;//背景颜色
+$priceColor:#e61e19;//价格
+
+*{
+	padding:0;
+	margin:0;
+}
+.page{
+	background:#fff;
+}
+img{
+	display: inline-block;
+	margin:0;
+	vertical-align: middle;
+}
+ul,li{
+	list-style: none;
+}
+.clearfix{
+	clear: both;
+	overflow: hidden;
+}
+
+.bar{
+	background:rgba(0,0,0,0);
+	&:after{
+		border:none;
+		background: none;
+	}
+}
+
+.main-search{
+	display: block;
+	height: 1.8rem;
+	background:url(../images/sousuokuang@2x.png);
+	border-radius: 6px;
+	margin:0.2rem 30px 0.2rem 30px;
+	background-size: cover;
+
+}
+
+/**
+ * 首页导航
+ */
+.main-nav{
+	clear: both;
+	overflow: hidden;
+	padding-top: 14px;
+	.nav-item{
+		float: left;
+		width: 20%;
+		text-align: center;
+		margin-bottom: 14px;
+		.nav-icon{
+			width: 35px;
+			height: 35px;
+			display: block;
+			margin:0 auto 7px auto;
+			background-size: cover;
+		}
+		.nav-text{
+			display: block;
+			text-align: center;
+			color:#000;
+			font-size: 12px;
+		}
+	}
+}
+/**
+ * 头条
+ */
+.main-news{
+	padding:0 13px;
+	border:1px solid $borderColor;
+	border-width: 1px 0;
+	height: 40px;
+	.icon-news{
+		vertical-align: middle;
+		margin-right: 3px;
+	}
+	.news-imgtext{
+		vertical-align: middle;
+	}
+	.icon-news{
+		width: 18px;
+		height: 20px;
+		display: inline-block;
+	}
+	.main-news-title{
+		float: left;
+		margin-top: 4px;
+		width: 110px;
+	}
+}
+.main-news-list{
+	height: 38px;
+	line-height: 38px;
+	margin-left: 120px;
+	overflow: hidden;
+	.list-item{
+		height: 38px;
+		display: block;
+		font-size: 12px;
+		color:#0a0a0a;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		text-overflow:ellipsis;
+		-webkit-box-orient: vertical;
+	}
+	.icon-item{
+		width: 5px;
+		height: 5px;
+		vertical-align: middle;
+	}
+}
+
+/**
+ * 活动
+ */
+.main-activity{
+	padding:5px;
+	background:$bgColor;
+	.activity-item{
+		display: block;
+		margin-bottom: 5px;
+	}
+	.activity-item:last-child{
+		margin:0;
+	}
+}
+
+/**
+ * 大师推荐
+ */
+.main-cookbook{
+	padding:12px 5px;
+}
+.main-cookbook-list{
+	.cookbook-item{
+		position: relative;
+		padding:0 0 6px 0;
+		>a{
+			display: block;
+		}
+	}
+	.cookbook-item:last-child{
+		padding-bottom: 0;
+	}
+	.main-cookbook-text{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		margin-top: -16px;
+		text-align: center;
+		color:#fff;
+		font-weight: bold;
+	}
+	.cookbook-name{
+		display: inline-block;
+		border:1px solid #fff;
+		padding:2px;
+		.cookbook-name-inner{
+			border:1px solid #fff;
+			padding:0px 10px;
+			font-size: 14px;
+			height: 24px;
+		}
+	}
+	.main-cookbook-text2{
+		margin-top: -41px;
+		.cookbook-name{
+			background:rgba(0,0,0,.5);
+			border:none;
+			padding:15px 21px;
+		}
+		.cookbook-name-inner{
+			border-width: 1px 0;
+			padding:8px 16px;
+			height: 52px;
+			font-size: 26px;
+		}
+	}
+}
+.main-cookbook-head{
+	clear: both;
+	overflow: hidden;
+	margin-bottom: 12px;
+	.main-cookbook-list{
+		padding-left: 2px;
+		.cookbook-item{
+			
+		}
+	}
+	.main-cookbook-right{
+		
+		width: 50%;
+		float: left;
+	}
+}
+.cookbook-recommend-title{
+	width: 50%;
+	float: left;
+}
+
+
+/**
+ * 广告条
+ */
+.main-ad{
+	padding:5px 2px;
+	background:$bgColor;
+}
+
+/**
+ * 商品列表
+ */
+.commodity-list{
+	clear: both;
+	overflow: hidden;
+	border:1px solid $borderColor;
+	border-collapse:collapse;
+	tr,td{
+		border:1px solid $borderColor;
+	}
+	.commodity-item{
+		float: left;
+		width: 50%;
+	}
+	.selling-title{
+		border:1px solid $borderColor;
+		border-width: 0 1px 1px 0;
+		text-align: center;
+		overflow: hidden;
+		img{
+			max-width: 320px;
+			max-height:320px;
+			min-height: 146px;
+			width: 100%;
+		}
+	}
+	.commodity-link{
+		display: block;
+		padding:6px;
+		border-width: 0 1px 1px 0;
+		.commodity-image{
+			text-align: center;
+			overflow: hidden;
+			vertical-align:middle;
+			margin-bottom: 5px;
+			img{
+				max-width: 320px;
+				max-height:320px;
+				width: 100%;
+			}
+		}
+		.commodity-title{
+			color:#0a0a0a;
+			font-size: 14px;
+			line-height: 15px;
+			height: 30px;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			text-overflow:ellipsis;
+			-webkit-box-orient: vertical;
+		}
+	}
+	.commodity-info{
+		clear: both;
+		overflow: hidden;
+		height: 27px;
+		padding:5px 0;
+		line-height: 20px;
+	}
+	.price{
+		float: left;
+		font-size: 16px;
+		line-height: 20px;
+	}
+	.cart{
+		float: right;
+		padding:0 10px;
+		.icon-cart{
+			width: 19px;
+			height: 17px;
+		}
+	}
+}
+
+
+.price{
+	color:$priceColor;
+	font-weight: bold;
+}
+
+/**
+ * 推荐
+ */
+.recommend-title {
+    padding: 0 13px;
+    font-size: 17px;
+    color: #ff3454;
+    font-weight: bold;
+    background: $bgColor;
+    height: 53px;
+    line-height: 53px;
+    .icon-recommend {
+	    width: 20px;
+	    height: 20px;
+	    vertical-align: middle;
+	}
+
+	.recommend-text {
+	    display: inline-block;
+	    vertical-align: middle;
+	}
+}
+
+.recommend-list {
+    .commodity-item {
+        float: left;
+        width: 25%;
+    }
+
+    .commodity-link{
+    	.commodity-title{
+	    	font-size: 12px;
+	    	height: 28px;
+	    	overflow: hidden;
+	    }
+    }
+    .price{
+    	font-size: 12px;
+    }    
+}
+
+
+/**
+ * 到底提示
+ */
+.the-end{
+	padding:5px 0;
+	text-align: center;
+	color:#333;
+	font-size: 11px;
+	.icon-xiaolian{
+		width: 12px;
+		height: 12px;
+		vertical-align: middle;
+	}
+	.end-text{
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+
+.bar-tab{
+	.tab-item{
+		&.active,
+		&:active{
+			color:#e61e19;
+		}
+	}
+}

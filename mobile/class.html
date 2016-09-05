@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" href="static/js/lib/mobile/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <title>有点火</title>
+    <style type="text/css" media="screen">
+
+    </style>
+</head>
+
+<body>
+    <div class="page-group" ms-controller="pageClass">
+        <div class="page page-current" id="page-infinite-scroll-bottom">
+            <header class="bar bar-nav">
+                <a class="main-search" href="#"></a>
+            </header>
+            <nav class="bar bar-tab">
+                <a class="tab-item" href="index.html">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item active" href="class.html">
+                    <span class="icon icon-menu"></span>
+                    <span class="tab-label">分类</span>
+                </a>
+                <a class="tab-item" href="find.html">
+                    <span class="icon icon-app"></span>
+                    <span class="tab-label">发现</span>
+                </a>
+                <a class="tab-item" href="cart.html">
+                    <span class="icon icon-cart"></span>
+                    <span class="tab-label">购物车</span>
+                </a>
+                <a class="tab-item" href="personal.html">
+                    <span class="icon icon-me"></span>
+                    <span class="tab-label">我的</span>
+                </a>
+            </nav>
+            <div class="page-content">
+                <div class="content-block">
+                    <div class="class-content">
+                        <div class="page-content class-left">
+                            <a class="class-item" href="javascript:;" ms-repeat="classData" ms-click="onSelectClass(el)" ms-class-active="$index==0">
+                                <img ms-attr-src="el.defaultimg" width="100%" class="default" alt="">
+                                <img ms-attr-src="el.selectedimg" width="100%" class="active" alt="">
+                            </a>
+                            <a class="class-item active" href="javascript:;">
+                                <img src="static/images/all12x.png" width="100%" class="default" alt="">
+                                <img src="static/images/all21x.png" width="100%" class="active" alt="">
+                            </a>
+                        </div>
+                        <div class="class-right">
+                            <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100">
+                                <div class="list-block" style="margin:0;padding:0;">
+                                    <!-- <ul class="list-container">
+                                    </ul> -->
+                                    <ul class="list-block commodity-list class-commodity-list list-container">
+                                        <li class="commodity-item" ms-repeat="productListData">
+                                            <a class="commodity-link" ms-attr-href="'productinfo.html?pcode=' + el.pcode + '&skucode=' + el.skucode">
+                                                <div class="commodity-image">
+                                                    <img ms-attr-src="el.imgurl != '' ? el.imgurl : 'static/images/product_defalut.png'" alt="">
+                                                </div>
+                                                <h3 class="commodity-title">{{el.productname}}</h3>
+                                                <div class="commodity-info">
+                                                    <div class="price">￥{{el.price}}</div>
+                                                    <div class="cart">
+                                                        <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="commodity-item">
+                                            <a class="commodity-link" href="#">
+                                                <div class="commodity-image">
+                                                    <img src="images/shangpin640.jpg" alt="">
+                                                </div>
+                                                <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                                <div class="commodity-info">
+                                                    <div class="price">￥33.3</div>
+                                                    <div class="cart">
+                                                        <img class="icon-cart" src="images/fenlei_gouwuche@2x.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="infinite-scroll-preloader">
+                                    <div class="preloader"></div>
+                                </div>
+                            </div>
+                            <!-- <div class="content infinite-scroll infinite-scroll-bottom">
+                                <ul class="list-block commodity-list class-commodity-list">
+                                    <li class="commodity-item" ms-repeat="productListData">
+                                        <a class="commodity-link" ms-attr-href="'productinfo.html?pcode=' + el.pcode + '&skucode=' + el.skucode">
+                                            <div class="commodity-image">
+                                                <img ms-attr-src="el.imgurl != '' ? el.imgurl : 'static/images/product_defalut.png'" alt="">
+                                            </div>
+                                            <h3 class="commodity-title">{{el.productname}}</h3>
+                                            <div class="commodity-info">
+                                                <div class="price">￥{{el.price}}</div>
+                                                <div class="cart">
+                                                    <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="commodity-item">
+                                        <a class="commodity-link" href="#">
+                                            <div class="commodity-image">
+                                                <img src="images/shangpin640.jpg" alt="">
+                                            </div>
+                                            <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                            <div class="commodity-info">
+                                                <div class="price">￥33.3</div>
+                                                <div class="cart">
+                                                    <img class="icon-cart" src="images/fenlei_gouwuche@2x.png" alt="">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="commodity-item">
+                                        <a class="commodity-link" href="#">
+                                            <div class="commodity-image">
+                                                <img src="images/shangpin640.jpg" alt="">
+                                            </div>
+                                            <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                            <div class="commodity-info">
+                                                <div class="price">￥33.3</div>
+                                                <div class="cart">
+                                                    <img class="icon-cart" src="images/fenlei_gouwuche@2x.png" alt="">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="infinite-scroll-preloader">
+                                    <div class="preloader"></div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['sm','avalon','util'], function(sm,avalon,util) {
+        var url = {
+            getClass:"json/class.json",
+            getProduct:'json/productlist.json'
+        };
+
+    
+
+        util.ajax(url.getClass,'post',{},function(result){
+            if(result && result.code=='0'){
+                c_pageClass.classData = result.data
+            }
+        })
+
+        var c_pageClass = avalon.define({
+            $id:'pageClass',
+            classData:[],
+            productListData:[],
+            activeClass:'',
+            onSelectClass:function(el){
+                $('.class-left .class-item').removeClass('active');
+                $(this).addClass('active')
+                c_pageClass.activeClass = el.categorycode;
+                classPage.pageindex = 1;
+                c_pageClass.productListData.clear();
+                getProduct({
+                    pageindex:classPage.pageindex,
+                    pagesize:classPage.pagesize,
+                    sortname:'',
+                    strwhere:c_pageClass.activeClass
+                });
+            }
+        });
+
+        avalon.scan();
+
+        var getProduct = function(postdata){
+            util.ajax(url.getProduct,'get',postdata,function(result){
+                $('.infinite-scroll-preloader').hide();
+                if(result && result.code=='0'){
+                    if(!result.data || result.data.length == 0){
+                        return;
+                    }
+                    classPage.pageindex ++;
+                    c_pageClass.productListData.pushArray(result.data);
+                    
+                }
+            })
+        }
+
+        var classPage = {
+            pageindex:1,
+            pagesize:20,
+            pagemax:0
+        }
+
+        getProduct({
+            pageindex:classPage.pageindex,
+            pagesize:classPage.pagesize,
+            sortname:'',
+            strwhere:''
+        });
+
+
+
+        $.init();
+
+
+
+        var loading = false;
+
+
+        // 注册'infinite'事件处理函数
+        $(document).on('infinite', '.infinite-scroll-bottom', function() {
+
+            // 如果正在加载，则退出
+            if (loading) return;
+
+            $('.infinite-scroll-preloader').show();
+            // 设置flag
+            loading = true;
+
+            // 模拟1s的加载过程
+            setTimeout(function() {
+                // 重置加载flag
+                loading = false;
+
+                // 添加新条目
+                getProduct({
+                    pageindex:classPage.pageindex,
+                    pagesize:classPage.pagesize,
+                    sortname:'',
+                    strwhere:c_pageClass.activeClass
+                });
+
+
+                // 更新最后加载的序号
+                lastIndex = $('.list-container li').length;
+                //容器发生改变,如果是js滚动，需要刷新滚动
+                $.refreshScroller();
+            }, 1000);
+        });
+
+
+
+
+
+    })
+
+
+    </script>
+</body>
+
+</html>

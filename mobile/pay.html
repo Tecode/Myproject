@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <title>有点火</title>
+</head>
+
+<body>
+    <div class="page-group" ms-controller="pageSubmitourder">
+        <div class="page page-submitourder page-current">
+            <header class="bar bar-nav bar-nav-red order-bar">
+                <a href="javascript:history.back(-1)" class="icon icon-left pull-left"></a>
+                <h1 class="title">支付</h1>
+            </header>
+            <div class="content submitorder-content">
+                <div class="submitorder-info">
+                    <div class="block-title">
+                        待支付金额
+                        <div class="pull-right button-danger">
+                            22.00元
+                        </div>
+                    </div>
+                    <div class="list-block pay-type-list">
+                        <ul>
+                            <a class="item-content item-link" href="pay-success.html">
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        <img src="static/images/pay-yue.png" width="30" alt="" style="vertical-align: middle;">
+                                        余额支付
+                                    </div>
+                                    <div class="item-after">我的余额0元</div>
+                                </div>
+                            </a>
+                            <a class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        <img src="static/images/pay-weixin.png" width="30" alt="" style="vertical-align: middle;">
+                                        微信支付
+                                    </div>
+                                    <div class="item-after"></div>
+                                </div>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['sm', 'avalon', 'util'], function(sm, avalon, util) {
+        $.init();
+
+        var c_pageSubmitourder = avalon.define({
+            $id: 'pageSubmitourder',
+        });
+        avalon.scan();
+    })
+    </script>
+</body>
+
+</html>

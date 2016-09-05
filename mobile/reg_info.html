@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" href="static/js/lib/mobile/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <title>有点火</title>
+    <style>
+    body{
+        background: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="page-reg" ms-controller="pageRegInfo">
+        <div class="reg-logo">
+            <img src="static/images/logo@2x.png" width="90" alt="">
+        </div>
+        <div class="reg-form">
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/name@2x.png" width="10" alt="">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input type="text" name="username" placeholder="姓名">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/dianpu@2x.png" width="10" alt="">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input type="text" name="shopname" placeholder="店铺名称">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/leixing@2x.png" width="10" alt="">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input type="text" placeholder="店铺类型" name="dptype">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/quyu@2x.png" width="10" alt="">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input type="text" placeholder="店铺区域" name="address" class="address">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/quyu@2x.png" width="10" alt="">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <select style="padding:0;" name="street">
+                                        <option value="">请选择乡镇</option>
+                                        <option value="1">科华路</option>
+                                        <option value="2">火车南站西路</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/add@2x.png" width="10" alt="">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input type="text" name="detailaddress" placeholder="详细地址">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+            <a href="javascript:;" class="button button-fill button-danger" ms-click="onSubmit()">提交</a>
+
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['zepto','avalon','city','util'],function(zepto,avalon,city,util){
+        var url = {
+            submitRegInfo:''
+        }
+        var cityCode = [],cityName=[];
+        $(".address").citySelectPicker({
+            toolbarTemplate: '<header class="bar bar-nav">\
+            <button class="button button-link pull-right close-picker">确定</button>\
+            <h1 class="title">选择所在地区</h1>\
+            </header>',
+            onSelectChange:function(picker, values, codes){
+                console.log(picker);
+                console.log(values);
+                cityName = values;
+                cityCode = codes;
+            }
+        });
+
+        var dpTypeCode = [];
+        $('input[name="dptype"]').dpTypePicker({
+            toolbarTemplate: '<header class="bar bar-nav">\
+            <button class="button button-link pull-right close-picker">确定</button>\
+            <h1 class="title">选择店铺类型</h1>\
+            </header>',
+            data: [
+                      {
+                    "name":"北京",
+                    "code":"1",
+                    "sub":[
+                        {
+                            "name":"请选择",
+                            "code":"",
+                            "sub":[]
+                        },
+                        {
+                            "name":"东城区",
+                            "code":"11",
+                            "sub":[]
+                        }
+                    ]
+                },{
+                    "name":"四川",
+                    "code":"2",
+                    "sub":[
+                        {
+                            "name":"请选择",
+                            "code":"",
+                            "sub":[]
+                        },
+                        {
+                            "name":"成都",
+                            "code":"21"
+                        }
+                    ]
+                }
+              ],
+            onSelectChange:function(picker, values, codes){
+                console.log(picker);
+                console.log(values);
+                dpTypeCode = codes;
+            }
+        })
+
+        avalon.define({
+            $id:'pageRegInfo',
+            onSubmit:function(){
+                if($('input[name="username"]').val() == ''){
+                    util.toast("请填写姓名");
+                    return;
+                }
+                if($('input[name="shopname"]').val() == ''){
+                    util.toast("请填写店铺名称");
+                    return;
+                }
+                if(!(dpTypeCode.length > 1)){
+                    util.toast("请选择店铺类型");
+                    return;
+                }
+                
+                if(!(cityCode.length > 1)){
+                    util.toast("请选择所在区域");
+                    return;
+                }
+
+                var alladdress = cityName[0]+cityName[1]+cityName[2]+$('select[name="street"] :checked').text()+$('input[name="detailaddress"]').val();
+                var postdata = {
+                    alladdress:alladdress,
+                    city:cityCode[1],
+                    county:cityCode[2],
+                    detailaddress:$('input[name="detailaddress"]').val(),
+                    dptype:dpTypeCode[1],
+                    gpsaddress:'',
+                    province:cityCode[0],
+                    shopname:$('input[name="shopname"]').val(),
+                    street:$('select[name="street"]').val(),
+                    username:$('input[name="username"]').val(),
+
+                }
+                util.ajax(url.submitRegInfo,'post',postdata,function(result){
+                    if(result && result.code=='0'){
+                        setTimeout(function(){
+                            window.location.href="reg_success.html"
+                        },500)
+                    }
+                })
+            }
+        })
+
+        avalon.scan();
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" href="static/js/lib/mobile/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <link rel="stylesheet" type="text/css" href="static/js/lib/swiper/css/swiper.min.css">
+    <title>有点火</title>
+</head>
+
+<body>
+	<div class="page-group page-cart ms-controller" ms-controller="pageCart">
+	    <div class="page page-current">
+	    	<header class="bar bar-nav order-bar">
+				<a class="icon icon-remove pull-right" ms-click="onRemoveCart()"></a>
+				<h1 class="title">购物车</h1>
+			</header>
+			
+			<div class="bar bar-footer-secondary">
+			    <div class="pull-left">
+			    	<label class="label-checkbox" ms-click="onAllSelect()">
+		                <input type="checkbox" name="checkbox" value='1'>
+		                <div class="item-media">
+		                    <i class="icon icon-form-checkbox"></i>
+		                    <span class="checkbox-text">全选</span>
+		                </div>
+		            </label>
+		            
+			    </div>
+			    <div class="pull-left cart-price">
+		            	<p>合计：<span class="price">￥{{totalPrice|number(2)}}</span></p>
+		            	<!-- <p>运费：<span>包邮</span></p> -->
+		            </div>
+	            <div class="pull-right">
+	            	<div class="product-btngrounp">
+	                    <a href="submitorder.html" class="product-btn btn-red">去结算(0)</a>
+	                </div>
+	            </div>
+
+			</div>
+
+	        <nav class="bar bar-tab">
+                <a class="tab-item" href="index.html">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item" href="class.html">
+                    <span class="icon icon-menu"></span>
+                    <span class="tab-label">分类</span>
+                </a>
+                <a class="tab-item" href="find.html">
+                    <span class="icon icon-app"></span>
+                    <span class="tab-label">发现</span>
+                </a>
+                <a class="tab-item active" href="cart.html">
+                    <span class="icon icon-cart"></span>
+                    <span class="tab-label">购物车</span>
+                </a>
+                <a class="tab-item" href="personal.html">
+                    <span class="icon icon-me"></span>
+                    <span class="tab-label">我的</span>
+                </a>
+            </nav>
+	        <div class="content">
+				
+				<div class="product-list cart-list">
+                    <div class="list-block media-list ">
+                        <ul>
+                            <li ms-repeat="cartData">
+                                <div class="item-content">
+                                	<div class="item-select">
+                                		<label class="label-checkbox" ms-click="onSelect()">
+							                <input type="checkbox" name="checkbox" ms-data-product="el">
+							                <div class="item-media">
+							                    <i class="icon icon-form-checkbox"></i>
+							                </div>
+							            </label>
+                                	</div>
+                                    <div class="item-media"><img ms-attr-src="el.productimg"></div>
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="product-title"><a href="static/productinfo.html">{{el.productname}}</a></div>
+                                        </div>
+                                        <div class="item-subtitle">
+                                            <span class="price">￥{{el.price}}</span>
+                                            <div class="amount-modified" ms-data-product="el">
+                                                <a href="javascript:;" class="reduce">-</a>
+                                                <input type="tel" name="count" value="1" ms-duplex="el.count" ms-on-input="oncomputeTotalPrice">
+                                                <a href="javascript:;" class="plus">+</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- <li>
+                                <div class="item-content">
+                                	<div class="item-select">
+                                		<label class="label-checkbox">
+							                <input type="checkbox" name="checkbox" value='1'>
+							                <div class="item-media">
+							                    <i class="icon icon-form-checkbox"></i>
+							                </div>
+							            </label>
+                                	</div>
+                                    <div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="product-title"><a href="static/productinfo.html">清汤麻辣火锅好吃得很好吃得不能再好吃了清汤麻辣火锅好吃得很好吃得不能再好吃了</a></div>
+                                        </div>
+                                        <div class="item-subtitle">
+                                            <span class="price">￥10.7</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+
+	        </div>
+	    </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['sm','avalon','util'], function(sm,avalon,util) {
+        $.init();
+
+        var c_pageCart = avalon.define({
+            $id:'pageCart',
+            onAllSelect:function(){
+            	if($(this).find('input[name="checkbox"]').is(':checked')){
+            		$('.product-list input[name="checkbox"]').prop('checked',false)
+            	}else{
+            		$('.product-list input[name="checkbox"]').prop('checked',true)
+            	}
+                computeTotalPrice();
+            },
+            onRemoveCart:function(){
+            	util.confirm('你确定要删除吗？',function(){
+            		var select = $('.cart-list').find('li input[type="checkbox"]:checked');
+                    $(select).each(function(index, el) {
+                        c_pageCart.cartData.remove(el["data-product"]);
+                        delCartData(el["data-product"].skucode);
+                        
+                    });
+            	})
+            },
+            cartData:[],
+            totalPrice:'0.00',
+            onSelect:function(){
+                setTimeout(function(){
+                    computeTotalPrice();
+                },0)
+            },
+            oncomputeTotalPrice:function(){
+                computeTotalPrice();
+                var initVla = $(this).val();
+                updateCartNum($(this).parent()[0]["data-product"].skucode,initVla);
+            }
+        });
+        avalon.scan();
+
+        //数量修改
+        var amountModified = function(elem){
+            if(!elem){
+                return;
+            }
+
+            $(elem).find('.reduce').bind('click', function(event) {
+                var initVla = $(this).siblings('input').val();
+                initVla = initVla-1;
+                if(initVla<1){
+                    initVla = 1;
+                }
+                $(this).siblings('input').val(initVla);
+                computeTotalPrice()
+                updateCartNum($(this).parent()[0]["data-product"].skucode,initVla);
+            });
+            $(elem).find('.plus').bind('click', function(event) {
+                var initVla = $(this).siblings('input').val();
+                initVla = initVla*1+1;
+                $(this).siblings('input').val(initVla);
+                computeTotalPrice()
+                updateCartNum($(this).parent()[0]["data-product"].skucode,initVla);
+            });
+
+        }
+
+        
+        //计算价格
+        var computeTotalPrice = function(){
+            var select = $('.cart-list').find('li input[type="checkbox"]:checked');
+            var count = 0;
+            $(select).each(function(index, el) {
+                count = count + el["data-product"].price * $(el).parents('.item-content').find('input[name="count"]').val();
+            });
+
+            c_pageCart.totalPrice = count;
+            
+            
+        }
+
+        //获取购物车数据
+        var getCartData = function(){
+            util.ajax('json/cart.json','post',{
+                contactphone:'15982057691',
+                type:0
+            },function(result){
+                if(result && result.code=='0'){
+                    c_pageCart.cartData = result.data;
+                    amountModified($('.amount-modified'));
+                }
+            })
+        }
+
+        //更新购物车
+        var updateCartNum = function(skucode,count){
+            util.ajax('json/cart.json','post',{
+                contactphone:'15982057691',
+                count:count,
+                skucode:skucode
+            },function(result){
+                if(result && result.code=='0'){
+                }
+            })
+        }
+
+        //删除购物车
+        var delCartData = function(skucode,fn){
+            util.ajax('json/cart.json','post',{
+                contactphone:'15982057691',
+                shopcartype:'0',
+                skucode:skucode
+            },function(result){
+                if(result && result.code=='0'){
+                    fn ? fn.call(this,true) : '';
+                }
+            })
+        }
+        getCartData();
+    })
+    </script>
+</body>
+
+</html>

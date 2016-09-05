@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <title>有点火</title>
+</head>
+
+<body>
+    <div class="page-group ms-controller" ms-controller="page">
+        <div class="page page-current">
+            <header class="bar bar-nav bar-nav-red order-bar">
+                <a href="javascript:history.back(-1)" class="icon icon-left pull-left"></a>
+                <h1 class="title">添加收货地址</h1>
+            </header>
+            <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100">
+                <div class="list-block" style="margin:0;padding:0;">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">收货人姓名<span class="button-danger">*</span></div>
+                                    <div class="item-input">
+                                        <input type="text" name="consignee" placeholder="请输入收货人姓名">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">手机号码<span class="button-danger">*</span></div>
+                                    <div class="item-input">
+                                        <input type="text" name="phone" placeholder="请输入手机号码">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">选择省<span class="button-danger">*</span></div>
+                                    <div class="item-input">
+                                        <select name="provincecode" ms-on-change="onProvinceChange">
+                                            <option value="">请选择省</option>
+                                            <option ms-repeat="provinceData" ms-attr-value="el.code">{{el.name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li ms-if="cityData.length>0">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">选择市<span class="button-danger">*</span></div>
+                                    <div class="item-input">
+                                        <select name="citycode" ms-on-change="onCityChange">
+                                            <option value="">请选择市</option>
+                                            <option ms-repeat="cityData" ms-attr-value="el.code">{{el.name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li ms-if="countyData.length>0">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">选择区/县<span class="button-danger">*</span></div>
+                                    <div class="item-input">
+                                        <select name="countycode">
+                                            <option value="">请选择区/县</option>
+                                            <option ms-repeat="countyData" ms-attr-value="el.code">{{el.name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">详细地址<span class="button-danger">*</span></div>
+                                    <div class="item-input">
+                                        <input type="text" name="detailed" placeholder="输入详细地址/小区/楼栋">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">邮政编码</div>
+                                    <div class="item-input">
+                                        <input type="text" name="zipcode" placeholder="请输入邮政编码">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="weui_cells_checkbox">
+                                <label class="weui_cell weui_check_label">
+                                    <div class="weui_cell_hd">
+                                        <input type="checkbox" name="isdefault" class="weui_check">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>是否默认</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <a href="javascript:;" class="button button-fill button-danger" style="height:auto;padding:5px;" ms-click="onSubmit">提交</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui_loading_toast">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <div class="weui_loading">
+                <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+            </div>
+            <p class="weui_toast_content">加载中</p>
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script src="static/js/lib/citydata.js"></script>
+    <script>
+    require(['avalon', 'util'], function(avalon, util) {
+        var c_page = avalon.define({
+            $id: 'page',
+            cateringData: {
+                province: '',
+                city: '',
+                county: ''
+            },
+            provinceData: window.cityData,
+            cityData: [],
+            countyData: [],
+            streetData: [],
+            onProvinceChange: function() {
+                var i = $(this).find('option').not(function() {
+                    return !this.selected
+                }).length > 0 ? $(this).find('option').not(function() {
+                    return !this.selected
+                })[0].index : '';
+                c_page.cityData = c_page.provinceData[i - 1].sub;
+                c_page.cateringData.city = '';
+                c_page.cateringData.county = '';
+                c_page.cateringData.street = '';
+            },
+            onCityChange: function() {
+                var i = $(this).find('option').not(function() {
+                    return !this.selected
+                }).length > 0 ? $(this).find('option').not(function() {
+                    return !this.selected
+                })[0].index : '';
+                c_page.countyData = c_page.cityData[i - 1].sub;
+                c_page.cateringData.county = '';
+                c_page.cateringData.street = '';
+            },
+            onCountyChange: function() {
+                var code = $(this).val();
+            },
+            onSubmit: function() {
+                console.log();
+
+                if ($('input[name="consignee"]').val() == '') {
+                    util.tip("请填写收货人");
+                    return false;
+                }
+                if ($('input[name="phone"]').val() == '') {
+                    util.tip("请填写手机号码");
+                    return false;
+                }
+                var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+                if (!reg.test($('input[name="phone"]').val())) {
+                    util.tip("手机号码错误");
+                    return false;
+                }
+
+                if ($('select[name="provincecode"]').val() == '') {
+                    util.tip("请选择省");
+                    return false;
+                }
+
+                if ($('select[name="citycode"]').val() == '') {
+                    util.tip("请填写市");
+                    return false;
+                }
+
+                if ($('input[name="detailed"]').val() == '') {
+                    util.tip("请填写详细地址");
+                    return false;
+                }
+
+                var adderssinfo = '';
+                var provinceObj = $("select[name='provincecode']").find('option').not(function () { return !this.selected });
+                adderssinfo += provinceObj.length > 0 ? (provinceObj.attr('value') != '' ? provinceObj.html() : '') : '';
+                var cityObj = $("select[name='citycode']").find('option').not(function () { return !this.selected });
+                adderssinfo += cityObj.length > 0 ? ' ' + (cityObj.attr('value') != '' ? cityObj.html() : '') : '';
+                var countyObj = $("select[name='countycode']").find('option').not(function () { return !this.selected });
+                adderssinfo += countyObj.length > 0 ? ' ' + (countyObj.attr('value') != '' ? countyObj.html() : '') : '';
+                adderssinfo += ' '+$('input[name="detailed"]').val();
+
+
+
+                
+
+                util.ajax('', 'post', {
+                    consignee: $('input[name="consignee"]').val(),
+                    phone: $('input[name="phone"]').val(),
+                    provincecode: $('select[name="provincecode"]').val(),
+                    citycode: $('select[name="citycode"]').val(),
+                    countycode: $('select[name="countycode"]').val(),
+                    detailed: $('input[name="detailed"]').val(),
+                    zipcode: $('input[name="zipcode"]').val(),
+                    adderssinfo: adderssinfo,
+                    isdefault: $('input[name="isdefault"]').is(':checked') ? 1 : 0 //是否默认1是 0否
+                }, function(result) {
+
+                })
+            }
+        });
+        avalon.scan();
+
+        $('.weui_loading_toast').remove()
+    })
+    </script>
+</body>
+
+</html>

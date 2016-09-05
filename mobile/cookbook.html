@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <link rel="stylesheet" type="text/css" href="static/css/weui.min.css">
+    <title>有点火</title>
+</head>
+
+<body>
+    <div class="page-cookbook ms-controller page-hide" ms-controller="pageCookbook">
+        <div class="cookbook_head">
+            <img ms-attr-src="cookbookData.dishesimage" width="100%" alt="">
+            <h2 class="title">{{cookbookData.dishesname}}</h2>
+        </div>
+        <div class="cookbook-content">
+            <div class="cookbook-block">
+                <div class="materials">
+                    <table>
+                        <tr class="title">
+                            <td colspan="2" align="center">主料</td>
+                        </tr>
+                        <tr>
+                            <td>火锅底料</td>
+                            <td>458g</td>
+                        </tr>
+                        <tr>
+                            <td>火锅底料</td>
+                            <td>458g</td>
+                        </tr>
+                        <tr class="title">
+                            <td colspan="2" align="center">辅料</td>
+                        </tr>
+                        <tr>
+                            <td>火锅底料</td>
+                            <td>458g</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="cookbook-block">
+                <h3 class="heading">烹饪方法</h3>
+                <div ms-html="cookbookData.menusurl">
+                    <p style="height:1000px;"></p>
+                </div>
+            </div>
+            <div class="cookbook-block">
+                <h3 class="heading">配套调料</h3>
+                <div>
+                    <ul class="cookbook-product commodity-list">
+                        <li class="product-item commodity-link" ms-repeat="cookbookData.list_commd">
+                            <img ms-attr-src="el.pictureurl" width="100%" alt="">
+                            <p class="commodity-title">{{el.stand}}</p>
+                            <a href="javascript:;" ms-click="onAddCart(el)" class="add-cart">加入购物车</a>
+                        </li>
+                        <li class="product-item commodity-link">
+                            <img src="http://images.udianhuo.com/file/image/20160322/131031110485379155.jpg" width="100%" alt="">
+                            <p class="commodity-title">酸菜鱼调味料酸菜鱼调味料酸菜鱼调味料酸菜鱼调味料酸菜鱼调味料</p>
+                            <a href="" class="add-cart">加入购物车</a>
+                        </li>
+                        <li class="product-item commodity-link">
+                            <img src="http://images.udianhuo.com/file/image/20160322/131031110485379155.jpg" width="100%" alt="">
+                            <p class="commodity-title">酸菜鱼调味料酸菜鱼调味料酸菜鱼调味料酸菜鱼调味料酸菜鱼调味料</p>
+                            <a href="" class="add-cart">加入购物车</a>
+                        </li>
+                        <li class="product-item commodity-link">
+                            <img src="http://images.udianhuo.com/file/image/20160322/131031110485379155.jpg" width="100%" alt="">
+                            <p class="commodity-title">酸菜鱼调味料酸菜鱼调味料酸菜鱼调味料酸菜鱼调味料酸菜鱼调味料</p>
+                            <a href="" class="add-cart">加入购物车</a>
+                        </li>
+                    </ul>
+                    <div style="padding:10px;">
+                        <a href="javascript:;" class="all-add-cart" ms-click="onAddCart(0)">全部加入购物车</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="toast">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast" style="min-height:auto;padding:7px 16px;width:auto;bottom:20%;top:auto;">
+            <p class="weui_toast_content" style="margin:0;">已完成</p>
+        </div>
+    </div> -->
+    
+
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['zepto', 'avalon', 'util'], function(zepto, avalon, util) {
+        var c_pageCookbook = avalon.define({
+            $id:'pageCookbook',
+            cookbookData:{
+                menusurl:'<p style="height:1000px;"></p>',
+                dishesimage:'static/images/main-cookbook_62.png'
+            },
+            materials:{
+                ingredients:[],
+                accessories:[]
+            },
+            onAddCart:function(el){
+                if(util.isapp() && !util.getMobile()){
+                    twapp.toLogin();
+                    return;
+                }
+                if(el === 0){//添加单个
+                    util.loading('添加中');
+                    var foradd = function(index){
+                        if(c_pageCookbook.cookbookData.list_commd.length>0 && index<c_pageCookbook.cookbookData.list_commd.length){
+
+                            addCart(c_pageCookbook.cookbookData.list_commd[index],1,function(result){
+                                index++;
+                                foradd(index);
+                            });
+                        }else{
+                            util.toast_ok('添加成功') 
+                        }
+                    }
+                    foradd(0);
+                }else{
+                    util.loading('添加中');
+                    addCart(el,1,function(result){
+                        util.loading('close');
+                        result ? util.toast_ok('添加成功') : util.toast_ok('添加失败');
+                    });
+                    
+                }
+                
+            }
+        });
+    
+        util.tip('添加成功');
+
+        avalon.scan();
+        $('.page-hide').removeClass('page-hide');
+
+        var addCart = function(el,type,fn){
+            util.ajax('/Shop/User/AddShopCar','post',{
+                count:1,
+                productcode:'',
+                skucode:'',
+                shopcartype:0
+            },function(result){
+                if(result && result.code=='0'){
+                    fn ? fn.call(this,true) : '';
+                }else{
+                    fn ? fn.call(this,false) : '';
+                }
+            })
+        }
+        
+
+        var getCookbookInfo = function(){
+            util.ajax('/Shop/LntelligentMenu/MenuDetails','post','dishescode=',function(result){
+                if(result && result.code=='0'){
+                    c_pageCookbook.cookbookData = result.data;
+                    $(c_pageCookbook.cookbookData.list_mater).each(function(index, el) {
+                        if(el.ismotherbatch == '1'){
+                           c_pageCookbook.materials.ingredients.push(el) 
+                        }else{
+                            c_pageCookbook.materials.accessories.push(el)
+                        }
+                    });
+
+                    $('.page-hide').removeClass('page-hide')
+                }
+            })
+        }
+        getCookbookInfo();
+    })
+    </script>
+</body>
+
+</html>

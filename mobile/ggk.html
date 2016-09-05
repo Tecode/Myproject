@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <link rel="stylesheet" href="static/css/weui.min.css">
+    <title>刮刮卡</title>
+    <style>
+    body {
+        background: #771718;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="scratch">
+        <img src="static/images/bg_guaguaka2x.png" width="100%" alt="">
+        <div class="scratch-area">
+            <div class="scratch-bg"></div>
+        </div>
+        <div class="scratch-content">
+            <h3>活动说明</h3>
+            <p>1、本次活动最终解释权归天味食品有限公司</p>
+        </div>
+    </div>
+    <div class="weui_loading_toast">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <div class="weui_loading">
+                <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+            </div>
+            <p class="weui_toast_content">加载中</p>
+        </div>
+    </div>
+
+
+    
+
+    <script src="static/js/lib/jquery.min.js"></script>
+    <script src="static/js/lib/wScratchPad.js"></script>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['util'], function(util) {
+
+        $(function() {
+        	var isresult = false;
+            var getData = function() {
+                util.ajax('', 'post', {}, function(result) {
+                    $('.weui_loading_toast').hide();
+                    result = {
+                        "data": {
+                            "activityname": "大转转",
+                            "activityexplain": "老用户邀请新用户获得更多优惠",
+                            "image": "http://images.udianhuo.com/file/image/20160316/131025773869509098.jpg",
+                            "type": "0",
+                            "gameprize": [{
+                                "detailedcode": "ca6G51458184622",
+                                "gradename": "一等奖",
+                                "prize": {
+                                    "currency": null,
+                                    "giftname": null,
+                                    "couponname": "自然首次注册券"
+                                }
+                            }, {
+                                "detailedcode": "c6sJH1458184622",
+                                "gradename": "二等奖",
+                                "prize": {
+                                    "currency": null,
+                                    "giftname": "麻辣香锅酱",
+                                    "couponname": null
+                                }
+                            }, {
+                                "detailedcode": "a4RKf1458184622",
+                                "gradename": "三等奖",
+                                "prize": {
+                                    "currency": "10",
+                                    "giftname": null,
+                                    "couponname": null
+                                }
+                            }, {
+                                "detailedcode": "0",
+                                "gradename": "抱歉，下次再来吧",
+                                "prize": null
+                            }],
+                            "participateinresult": {
+                                "detailedcode": "c6sJH1458184622",
+                                "resultexplain": "恭喜您获得:二等奖"
+                            }
+                        },
+                        "code": 0,
+                        "msg": "成功"
+                    }
+
+                    if (result && result.code == '0') {
+                        $('.scratch-bg').wScratchPad({
+                            size: 30, // The size of the brush/scratch.
+                            bg: '#fff', // Background (image path or hex color).
+                            text: '',
+                            fontsize: 20, //文字大小
+                            fg: '#cacaca', // Foreground (image path or hex color).
+                            realtime: true, // Calculates percentage in realitime.
+                            scratchDown: null, // Set scratchDown callback.
+                            scratchUp: null, // Set scratchUp callback.
+                            scratchMove: function(e, percent) {
+                                $('.scratch-bg').wScratchPad('setText', result.data.participateinresult.resultexplain);
+                                if (percent > 50 && !isresult) {
+                                	isresult = true;
+                                    util.alert(result.data.participateinresult.resultexplain);
+                                }
+                            }
+                        });
+                    } else {
+                        util.alert('网络加载失败');
+                    }
+                })
+            }
+
+            getData();
+
+        })
+    })
+    </script>
+</body>
+
+</html>

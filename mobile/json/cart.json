@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "skucode": "bm20160304",
+      "productcode": "GAKkk1457074963",
+      "productimg": "http://images.udianhuo.com/Content/tempfile/130988564547922546.jpg",
+      "productname": "粉蒸肉调味料",
+      "price": 0.02,
+      "count": 17,
+      "pagedata": {
+        "rowscount": "1",
+        "pageindex": "1",
+        "pagesize": "10",
+        "type": null,
+        "access_token": null
+      }
+    },
+    {
+      "skucode": "bm20160304",
+      "productcode": "GAKkk1457074963",
+      "productimg": "http://images.udianhuo.com/Content/tempfile/130988564547922546.jpg",
+      "productname": "粉蒸肉调味料",
+      "price": 0.02,
+      "count": 17,
+      "pagedata": {
+        "rowscount": "1",
+        "pageindex": "1",
+        "pagesize": "10",
+        "type": null,
+        "access_token": null
+      }
+    }
+  ],
+  "code": 0,
+  "msg": "成功"
+}

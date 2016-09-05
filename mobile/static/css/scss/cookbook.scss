@@ -1,0 +1,107 @@
+/**
+ * 智能菜谱
+ */
+
+
+//分类
+.cookbookclass-list{
+	padding:10px;
+	margin: 0;
+	.commodity-item{
+		margin-bottom: 10px;
+		img{
+			width: 100%;
+		}
+	}
+	.commodity-title{
+		font-size: 14px;
+		color:#000;
+		padding:10px 0;
+	}
+}
+
+.cookbook_head{
+	.title{
+		padding:20px 0;
+		width: 100%;
+		color:#454545;
+		text-align: center;
+		font-size: 16px;
+
+	}
+}
+.cookbook-content{
+	background:#ececec;
+}
+$bordercolor:#E5E5E5;
+.cookbook-block{
+	background:#fff;
+	padding-bottom: 10px;
+	.heading{
+		color:#444;
+		margin:0;
+		text-align: center;
+		font-size: 16px;
+		padding: 15px;
+		font-weight: 500;
+	}
+	.materials{
+		padding:20px;
+		
+		overflow: hidden;
+		.title{
+			background:#ededed;
+			color:#df7e8a;
+		}
+		table{
+			width: 100%;
+			border-radius: 10px;
+		}
+		table,tr,td{
+			border:1px solid #c2c2c2;
+		}
+		td{
+			padding:10px;
+			width: 50%;
+			text-align: center;
+		}
+		a{
+			color:#000;
+			text-decoration: none;
+		}
+	}
+}
+
+//商品
+.cookbook-product{
+	clear: both;
+	overflow: hidden;
+	.product-item{
+		width: 33%;
+		float: left;
+		padding:5px;
+		//border:1px solid #f2f2f2;
+		//border-width: 0 1px 1px 0;
+	}
+	.commodity-title{
+		margin:5px 0;
+	}
+	.add-cart{
+		display: block;
+		border:1px solid #f00;
+		font-size: 13px;
+		color:#f00;
+		text-align: center;
+		padding:3px 0;
+		border-radius: 4px;
+	}
+
+}
+.all-add-cart{
+	border-radius: 4px;
+	padding:5px;
+	display: block;
+	text-align: center;
+	background:#e51f17;
+	color:#fff;
+}

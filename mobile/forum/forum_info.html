@@ -1,0 +1,548 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/style/css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="static/style/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/style/css/iconfont.css">
+    <title>帖子详情</title>
+</head>
+
+<body>
+    <div id="loadingToast" class="weui_loading_toast">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <div class="weui_loading">
+                <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+            </div>
+            <p class="weui_toast_content">加载中</p>
+        </div>
+    </div>
+    <div class="index-main">
+        <div class="circleinfo">
+            <div class="circleinfo-body">
+                <div class="ms-controller" ms-controller="circleContent">
+                    <div class="weui_cells weui_cells_access">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="circle-userinfo circleinfo-userinfo">
+                                    <img class="user-avter" ms-attr-src="circlecontent.userdata.headpicture || 'static/images/img_touxiang@2x.png'" alt="">
+                                    <div class="userinfo-text">
+                                        <span>{{circlecontent.userdata.username}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="weui_cell_ft"></div> -->
+                        </div>
+                    </div>
+                    <div class="circle-content">
+                        <h3 class="title">标题</h3>
+                        <div class="text" ms-html="content">列表视图，用于将信息以列表的结构显示在页面上，是wap上最常用的内容结构。Cell由多个section组成，每个section</div>
+                        <div class="images">
+                            <img ms-repeat="circlecontent.Invitationdata.img" ms-attr-src="el.url">
+                            <img src="static/style/images/avter.jpg">
+                            <img src="static/style/images/avter.jpg">
+                            <img src="static/style/images/avter.jpg">
+                        </div>
+                        <div class="info">
+                            <span class="datetime">{{circlecontent.Invitationdata.publishtime*1000|date("yyyy MM dd:HH:mm:ss")}}</span>
+                            <div class="info-count">
+                                <span class="reviews"><i class="icon icon-comment"></i>{{circlecontent.Invitationdata.commentcount}}</span>
+                                <span class="reviews"><i class="icon icon-zambia"></i>{{circlecontent.Invitationdata.praisecount}}</span>
+                                <span class="reviews"><i class="icon icon-star-empty"></i>{{starNumber}}</span>
+                            </div>
+                        </div>
+                        <!-- <p class="comment-address"><i class="icon icon-address"></i>成都市 ● 建设路43号</p> -->
+                        <a class="circle-del" href="javascript:;"><i class="icon icon-del"></i></a>
+                    </div>
+                </div>
+                <div class="circle-comment" ms-controller="comment">
+                    <h2>全部评论</h2>
+                    <ul class="detailed-list">
+                        <li ms-repeat="commentList">
+                            <div class="topic-header detailed-user-info">
+                                <div class="user-logo">
+                                    <img ms-attr-src="el.userdata.headpicture || 'static/images/img_touxiang@2x.png'">
+                                </div>
+                                <div class="user-info">
+                                    <div class="user-name">{{el.userdata.username}}</div>
+                                    <div><span class="time">{{el.time*1000|date("yyyy MM dd:HH:mm:ss")}}</span></div>
+                                </div>
+                                <a class="detailed-del" href="javascript:;" ms-click="onDetailedDel(el,1)"><i class="icon icon-del"></i></a>
+                            </div>
+                            <div class="topic-content">
+                                <p class="content-text" ms-on-tap="showCommentDialog(el.commentcode,el.userdata.username,el.postedcode)">{{el.content}} </p>
+                            </div>
+                            <div class="topic-reply">
+                                <div class="reply-item" ms-repeat-elem="el.Reply">
+                                    <a href="javascript:;">{{elem.userdata.username}}</a>:
+                                    <a href="javascript:;">{{elem.content}}</a> 回复 <a href="javascript:;">{{elem.replyname}}</a>:
+                                    <span ms-on-tap="showCommentDialog(elem.Replytid,elem.Aname,el.Replytid)">{{elem.content}}</span>
+                                    <a href="javascript:;" ms-click="onDetailedDel(elem,2)">删除</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topic-header detailed-user-info">
+                                <div class="user-logo">
+                                    <img src="static/style/images/avter.jpg">
+                                </div>
+                                <div class="user-info">
+                                    <div class="user-name">蒲正东</div>
+                                    <div><span class="circle-user-dept"><i class="icon "></i>技术部</span><span class="time">2015-06-13 17:37:23</span></div>
+                                </div>
+                                <a class="detailed-del" href="javascript:;" ms-click="onDetailedDel()"><i class="icon icon-del"></i></a>
+                            </div>
+                            <div class="topic-content">
+                                <p class="content-text" ms-on-tap="showCommentDialog('1','蒲正东','1')" ms-html="emotion('11[微笑]1')">pingl</p>
+                            </div>
+                            <div class="topic-reply">
+                                <div class="reply-item">
+                                    <a href="javascript:;">蒲正东</a>:
+                                    <span>测试服的</span>
+                                    <a href="javascript:;" ms-click="onDetailedDel()">删除</a>
+                                </div>
+                                <div class="reply-item">
+                                    <a href="javascript:;">蒲正东</a> 回复 <a href="javascript:;">蒲正东</a>:
+                                    <span>测试服的</span>
+                                    <a href="javascript:;" ms-click="onDetailedDel()">删除</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topic-header detailed-user-info">
+                                <div class="user-logo">
+                                    <img src="static/style/images/avter.jpg">
+                                </div>
+                                <div class="user-info">
+                                    <div class="user-name">蒲正东</div>
+                                    <p class="time">2015-06-13 17:37:23</p>
+                                </div>
+                            </div>
+                            <div class="topic-content">
+                                <p class="content-text">继续加油</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="circle-action" ms-controller="circle-action">
+                <ul class="nav-bottom">
+                    <li>
+                        <a class="menu-item" href="javascript:;" ms-on-tap="showCommentDialog"><i class="icon icon-comment"></i></a>
+                    </li>
+                    <li>
+                        <a ms-visible="isPraise=='false'" class="menu-item" href="javascript:;" ms-on-tap="fnPraise"><i class="icon icon-zambia-empty"></i></a>
+                        <a ms-visible="isPraise=='true'" class="menu-item" href="javascript:;" ms-on-tap="fnPraiseCancel"><i class="icon icon-zambia"></i></a>
+                    </li>
+                    <!-- <li>
+                        <a ms-visible="iscollege=='false'" class="menu-item" href="javascript:;" ms-on-tap="fnCollection"><i class="icon icon-star-empty"></i></a>
+                        <a ms-visible="iscollege=='true'" class="menu-item" href="javascript:;" ms-on-tap="fnCollectionCancel"><i class="icon icon-star"></i></a>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="circle-comment-form ms-controller" ms-visible="commentDialogIsshow" ms-controller="commentform">
+                <div class="weui_dialog_alert">
+                    <div class="weui_mask"></div>
+                    <div class="weui_dialog">
+                        <div class="dialog-form">
+                            <textarea class="comment-textarea" name="comment-content" ms-duplex-string="commentContent" placeholder="回复内容"></textarea>
+                        </div>
+                        <div class="dialog-action">
+                            <a href="javascript:;" class="comment-btn-expression" ms-class-active="expressionIsshow" ms-on-tap="openExpression">
+                                <i class="icon icon-smile"></i>
+                            </a>
+                            <div class="right">
+                                <a href="javascript:;" class="weui_btn weui_btn_default" ms-on-tap="closeCommentDialog">取消</a>
+                                <a href="javascript:;" class="weui_btn weui_btn_primary" ms-on-tap="replySubmit">发表</a>
+                            </div>
+                        </div>
+                        <div class="comment-expression" ms-visible="expressionIsshow">
+                            <div class="expression-list">
+                                <div class="expression-content">
+                                    <div class="panel">
+                                        <ul class="emotions">
+                                            <li><i class="emotions-item" data-title="微笑" data-gifurl="0"></i></li>
+                                            <li><i class="emotions-item" data-title="撇嘴" data-gifurl="1"></i></li>
+                                            <li><i class="emotions-item" data-title="色" data-gifurl="2"></i></li>
+                                            <li><i class="emotions-item" data-title="发呆" data-gifurl="3"></i></li>
+                                            <li><i class="emotions-item" data-title="得意" data-gifurl="4"></i></li>
+                                            <li><i class="emotions-item" data-title="流泪" data-gifurl="5"></i></li>
+                                            <li><i class="emotions-item" data-title="害羞" data-gifurl="6"></i></li>
+                                            <li><i class="emotions-item" data-title="闭嘴" data-gifurl="7"></i></li>
+                                            <li><i class="emotions-item" data-title="睡" data-gifurl="8"></i></li>
+                                            <li><i class="emotions-item" data-title="大哭" data-gifurl="9"></i></li>
+                                            <li><i class="emotions-item" data-title="尴尬" data-gifurl="10"></i></li>
+                                            <li><i class="emotions-item" data-title="发怒" data-gifurl="11"></i></li>
+                                            <li><i class="emotions-item" data-title="调皮" data-gifurl="12"></i></li>
+                                            <li><i class="emotions-item" data-title="呲牙" data-gifurl="13"></i></li>
+                                            <li><i class="emotions-item" data-title="惊讶" data-gifurl="14"></i></li>
+                                            <li><i class="emotions-item" data-title="难过" data-gifurl="15"></i></li>
+                                            <li><i class="emotions-item" data-title="酷" data-gifurl="16"></i></li>
+                                            <li><i class="emotions-item" data-title="冷汗" data-gifurl="17"></i></li>
+                                            <li><i class="emotions-item" data-title="抓狂" data-gifurl="18"></i></li>
+                                            <li><i class="emotions-item" data-title="吐" data-gifurl="19"></i></li>
+                                            <li><i class="emotions-item" data-title="" data-gifurl=""></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="panel">
+                                        <ul class="emotions">
+                                            <li><i class="emotions-item" data-title="偷笑" data-gifurl="20"></i></li>
+                                            <li><i class="emotions-item" data-title="可爱" data-gifurl="21"></i></li>
+                                            <li><i class="emotions-item" data-title="白眼" data-gifurl="22"></i></li>
+                                            <li><i class="emotions-item" data-title="傲慢" data-gifurl="23"></i></li>
+                                            <li><i class="emotions-item" data-title="饥饿" data-gifurl="24"></i></li>
+                                            <li><i class="emotions-item" data-title="困" data-gifurl="25"></i></li>
+                                            <li><i class="emotions-item" data-title="惊恐" data-gifurl="26"></i></li>
+                                            <li><i class="emotions-item" data-title="流汗" data-gifurl="27"></i></li>
+                                            <li><i class="emotions-item" data-title="憨笑" data-gifurl="28"></i></li>
+                                            <li><i class="emotions-item" data-title="大兵" data-gifurl="29"></i></li>
+                                            <li><i class="emotions-item" data-title="奋斗" data-gifurl="30"></i></li>
+                                            <li><i class="emotions-item" data-title="咒骂" data-gifurl="31"></i></li>
+                                            <li><i class="emotions-item" data-title="疑问" data-gifurl="32"></i></li>
+                                            <li><i class="emotions-item" data-title="嘘" data-gifurl="33"></i></li>
+                                            <li><i class="emotions-item" data-title="晕" data-gifurl="34"></i></li>
+                                            <li><i class="emotions-item" data-title="折磨" data-gifurl="35"></i></li>
+                                            <li><i class="emotions-item" data-title="衰" data-gifurl="36"></i></li>
+                                            <li><i class="emotions-item" data-title="骷髅" data-gifurl="37"></i></li>
+                                            <li><i class="emotions-item" data-title="敲打" data-gifurl="38"></i></li>
+                                            <li><i class="emotions-item" data-title="再见" data-gifurl="39"></i></li>
+                                            <li><i class="emotions-item" data-title="" data-gifurl=""></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="panel">
+                                        <ul class="emotions">
+                                            <li><i class="emotions-item" data-title="擦汗" data-gifurl="40"></i></li>
+                                            <li><i class="emotions-item" data-title="抠鼻" data-gifurl="41"></i></li>
+                                            <li><i class="emotions-item" data-title="鼓掌" data-gifurl="42"></i></li>
+                                            <li><i class="emotions-item" data-title="糗大了" data-gifurl="43"></i></li>
+                                            <li><i class="emotions-item" data-title="坏笑" data-gifurl="44"></i></li>
+                                            <li><i class="emotions-item" data-title="左哼哼" data-gifurl="45"></i></li>
+                                            <li><i class="emotions-item" data-title="右哼哼" data-gifurl="46"></i></li>
+                                            <li><i class="emotions-item" data-title="哈欠" data-gifurl="47"></i></li>
+                                            <li><i class="emotions-item" data-title="鄙视" data-gifurl="48"></i></li>
+                                            <li><i class="emotions-item" data-title="委屈" data-gifurl="49"></i></li>
+                                            <li><i class="emotions-item" data-title="快哭了" data-gifurl="50"></i></li>
+                                            <li><i class="emotions-item" data-title="阴险" data-gifurl="51"></i></li>
+                                            <li><i class="emotions-item" data-title="亲亲" data-gifurl="52"></i></li>
+                                            <li><i class="emotions-item" data-title="吓" data-gifurl="53"></i></li>
+                                            <li><i class="emotions-item" data-title="可怜" data-gifurl="54"></i></li>
+                                            <li><i class="emotions-item" data-title="菜刀" data-gifurl="55"></i></li>
+                                            <li><i class="emotions-item" data-title="西瓜" data-gifurl="56"></i></li>
+                                            <li><i class="emotions-item" data-title="啤酒" data-gifurl="57"></i></li>
+                                            <li><i class="emotions-item" data-title="篮球" data-gifurl="58"></i></li>
+                                            <li><i class="emotions-item" data-title="乒乓" data-gifurl="59"></i></li>
+                                            <li><i class="emotions-item" data-title="" data-gifurl=""></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="panel">
+                                        <ul class="emotions">
+                                            <li><i class="emotions-item" data-title="咖啡" data-gifurl="60"></i></li>
+                                            <li><i class="emotions-item" data-title="饭" data-gifurl="61"></i></li>
+                                            <li><i class="emotions-item" data-title="猪头" data-gifurl="62"></i></li>
+                                            <li><i class="emotions-item" data-title="玫瑰" data-gifurl="63"></i></li>
+                                            <li><i class="emotions-item" data-title="凋谢" data-gifurl="64"></i></li>
+                                            <li><i class="emotions-item" data-title="示爱" data-gifurl="65"></i></li>
+                                            <li><i class="emotions-item" data-title="爱心" data-gifurl="66"></i></li>
+                                            <li><i class="emotions-item" data-title="心碎" data-gifurl="67"></i></li>
+                                            <li><i class="emotions-item" data-title="蛋糕" data-gifurl="68"></i></li>
+                                            <li><i class="emotions-item" data-title="闪电" data-gifurl="69"></i></li>
+                                            <li><i class="emotions-item" data-title="炸弹" data-gifurl="70"></i></li>
+                                            <li><i class="emotions-item" data-title="刀" data-gifurl="71"></i></li>
+                                            <li><i class="emotions-item" data-title="足球" data-gifurl="72"></i></li>
+                                            <li><i class="emotions-item" data-title="瓢虫" data-gifurl="73"></i></li>
+                                            <li><i class="emotions-item" data-title="便便" data-gifurl="74"></i></li>
+                                            <li><i class="emotions-item" data-title="月亮" data-gifurl="75"></i></li>
+                                            <li><i class="emotions-item" data-title="太阳" data-gifurl="76"></i></li>
+                                            <li><i class="emotions-item" data-title="礼物" data-gifurl="77"></i></li>
+                                            <li><i class="emotions-item" data-title="拥抱" data-gifurl="78"></i></li>
+                                            <li><i class="emotions-item" data-title="强" data-gifurl="79"></i></li>
+                                            <li><i class="emotions-item" data-title="" data-gifurl=""></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="panel">
+                                        <ul class="emotions">
+                                            <li><i class="emotions-item" data-title="弱" data-gifurl="80"></i></li>
+                                            <li><i class="emotions-item" data-title="握手" data-gifurl="81"></i></li>
+                                            <li><i class="emotions-item" data-title="胜利" data-gifurl="82"></i></li>
+                                            <li><i class="emotions-item" data-title="抱拳" data-gifurl="83"></i></li>
+                                            <li><i class="emotions-item" data-title="勾引" data-gifurl="84"></i></li>
+                                            <li><i class="emotions-item" data-title="拳头" data-gifurl="85"></i></li>
+                                            <li><i class="emotions-item" data-title="差劲" data-gifurl="86"></i></li>
+                                            <li><i class="emotions-item" data-title="爱你" data-gifurl="87"></i></li>
+                                            <li><i class="emotions-item" data-title="NO" data-gifurl="88"></i></li>
+                                            <li><i class="emotions-item" data-title="OK" data-gifurl="89"></i></li>
+                                            <li><i class="emotions-item" data-title="爱情" data-gifurl="90"></i></li>
+                                            <li><i class="emotions-item" data-title="飞吻" data-gifurl="91"></i></li>
+                                            <li><i class="emotions-item" data-title="跳跳" data-gifurl="92"></i></li>
+                                            <li><i class="emotions-item" data-title="发抖" data-gifurl="93"></i></li>
+                                            <li><i class="emotions-item" data-title="怄火" data-gifurl="94"></i></li>
+                                            <li><i class="emotions-item" data-title="转圈" data-gifurl="95"></i></li>
+                                            <li><i class="emotions-item" data-title="磕头" data-gifurl="96"></i></li>
+                                            <li><i class="emotions-item" data-title="回头" data-gifurl="97"></i></li>
+                                            <li><i class="emotions-item" data-title="跳绳" data-gifurl="98"></i></li>
+                                            <li><i class="emotions-item" data-title="挥手" data-gifurl="99"></i></li>
+                                            <li><i class="emotions-item" data-title="" data-gifurl=""></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="panel-nav">
+                                    <span class="origin" ms-class-active="active==1"></span>
+                                    <span class="origin" ms-class-active="active==2"></span>
+                                    <span class="origin" ms-class-active="active==3"></span>
+                                    <span class="origin" ms-class-active="active==4"></span>
+                                    <span class="origin" ms-class-active="active==5"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="static/js/require.config.js"></script>
+    <script type="text/javascript" src="static/js/require.js"></script>
+    <script>
+    require(['avalon', 'utils'], function(avalon, utils) {
+        
+
+        var c_commentform = avalon.define({
+            $id: 'commentform',
+            active: 1,
+            expressionIsshow: false,
+            commentDialogIsshow: false,
+            commentContent: '',
+            isSubmit: false,
+            replyid: '', //回复帖子id
+            topname: '', //回复人名字
+            topreply: '', //顶级id
+            openExpression: function() {
+                c_commentform.expressionIsshow = !c_commentform.expressionIsshow;
+            },
+            closeCommentDialog: function() {
+                c_commentform.commentDialogIsshow = false;
+            },
+            replySubmit: function() {
+                if (c_commentform.isSubmit) {
+                    return;
+                }
+                if (c_commentform.commentContent == "") {
+                    utils.toast.prompt('请输入评论');
+                    return;
+                }
+                utils.toast.loading('评论中...');
+                c_commentform.isSubmit = true;
+                utils.ajax('/Shop/Communication/CommentReply', {
+                    content: c_commentform.commentContent,
+                    postedcode: c_commentform.topreply,
+                    parentcode: c_commentform.replyid,
+                }, function(result) {
+                    c_commentform.isSubmit = false;
+                    utils.toast.loading('close');
+                    if (result && result.code == '0') {
+                        utils.toast.tip("评论成功");
+                        c_commentform.commentDialogIsshow = false;
+                        c_comment.commentList.push(result.data);
+                    }
+                })
+            }
+        });
+
+
+        var c_circleAction = avalon.define({
+            $id: 'circle-action',
+            isPraise: 'false', //是否点赞
+            iscollege: 'false', //是否收藏
+            showCommentDialog: function() {
+                c_commentform.replyid = '';
+                c_commentform.topname = '';
+                c_commentform.topreply = '';
+                $('.circle-comment-form textarea[name="comment-content"]').attr('placeholder', '回复内容');
+                c_commentform.expressionIsshow = false;
+                c_commentform.commentDialogIsshow = true;
+            },
+            fnPraise: function() {
+                c_circleContent.zambiaNumber++;
+                utils.toast.tip('点赞成功');
+                c_circleAction.isPraise = 'true';
+            },
+            fnPraiseCancel: function() {
+                utils.toast.tip('取消点赞');
+                c_circleAction.isPraise = 'false';
+            },
+            fnCollection: function() {
+                utils.toast.tip('收藏成功');
+                c_circleAction.iscollege = 'true';
+            },
+            fnCollectionCancel: function() {
+                utils.toast.tip('取消收藏');
+                c_circleAction.iscollege = 'false';
+            }
+        });
+        var c_comment = avalon.define({
+            $id: 'comment',
+            commentList: [],
+            emotion: function(text) {
+                return utils.emotion(text);
+            },
+            showCommentDialog: function(replyid, topname, topreply) {
+                c_commentform.replyid = replyid;
+                c_commentform.topname = topname;
+                c_commentform.topreply = topreply;
+                $('.circle-comment-form textarea[name="comment-content"]').attr('placeholder', '回复 ' + c_commentform.topname);
+                c_commentform.expressionIsshow = false;
+                c_commentform.commentDialogIsshow = true;
+            },
+            onDetailedDel: function(detailedinfo, type) {
+                var obj = this;
+                utils.toast.dialog('提示', '你确定要删除帖子', '1', function(r) {
+                    if (r) {
+                        utils.ajax('/Workmates/MobileWorkmates/HttpDeltopic', {
+                            pid: pid
+                        }, function(result) {
+                            if (result && result.code == '0') {
+                                utils.toast.loading('close');
+                                utils.toast.tip('删除成功');
+                                var remobj = type == 1 ? $(obj).parents('li') : $(obj).parents('reply-item');
+                                $(remobj).remove();
+                            }
+                        })
+                    }
+                })
+            }
+        });
+        var c_circleContent = avalon.define({
+            $id: 'circleContent',
+            content: utils.emotion('fdsa[微笑]kjfd'),
+            commentNumber: '111',
+            zambiaNumber: '1',
+            starNumber: '2',
+            circlecontent:{}
+        })
+        
+        getContent();
+
+        var getContent = function() {
+            utils.ajax('/Shop/Communication/InvitationDetailed', {
+                postedcode: '@postedcode'
+            }, function(result) {
+            	$('#loadingToast').remove();
+                if (result && result.code == '0') {
+                    c_circleContent.circlecontent = result.data;
+                    c_circleContent.content = utils.emotion(result.data.Invitationdata.content);
+                    avalon.scan();
+                }
+            })
+        }
+
+        //获取评论
+        function getReplys() {
+            utils.ajax('/Shop/Communication/CommentReplyList', {
+                postedcode: '@postedcode'
+            }, function(result) {
+                if (result && result.code == '0') {
+                    c_comment.commentList = result.data;
+                }
+            })
+        };
+        //表情
+        var startX = 0,
+            left = 0;
+        $('.expression-content')[0].addEventListener('touchstart', function(event) {
+            var touch = event.targetTouches[0];
+            startX = touch.pageX;
+            left = 0;
+            event.preventDefault();
+        });
+        $('.expression-content')[0].addEventListener('touchmove', function(event) {
+            var touch = event.targetTouches[0];
+            var translatex = (c_commentform.active - 1) * 252;
+            left = touch.pageX - startX;
+            translatex = translatex - left;
+
+            if (left > 0) {
+                if (c_commentform.active == 1) {
+                    return;
+                }
+            } else {
+                if (c_commentform.active == 5) {
+                    return;
+                }
+            };
+            $('.expression-content').css({
+                '-webkit-transform': 'translatex(-' + translatex + 'px)',
+                'transform': 'translatex(-' + translatex + 'px)'
+            });
+            event.preventDefault();
+        });
+        $('.expression-content')[0].addEventListener('touchend', function(event) {
+            if (Math.abs(left) > 50) {
+                if (left > 0) {
+                    c_commentform.active == 1 ? '' : c_commentform.active--;
+                } else {
+                    c_commentform.active < 5 ? c_commentform.active++ : '';
+                }
+            }
+            $('.expression-content').css({
+                '-webkit-transform': 'translatex(-' + (c_commentform.active - 1) * 252 + 'px)',
+                'transform': 'translatex(-' + (c_commentform.active - 1) * 252 + 'px)'
+            });
+            event.preventDefault();
+        });
+
+        $('.emotions i').on('tap', function(event) {
+            var title = $(this).attr('data-title');
+            if (title == "") {
+                //c_commentform.commentContent
+            } else {
+                c_commentform.commentContent += '[' + $(this).attr('data-title') + ']';
+            }
+
+        });
+
+        $('.circleinfo-body .images').unbind('tap').on('tap', 'img', function(event) {
+            event.preventDefault();
+            var urls = [];
+            var current = $(this).attr('src');
+            urls.push(current);
+            $(this).siblings('img').each(function(index, el) {
+                urls.push($(el).attr('src'));
+            });
+            wx.previewImage({
+                current: current,
+                urls: urls
+            });
+        });
+
+        $('.circle-content').on('click', '.circle-del', function(event) {
+            var obj = this,
+                pid = $(this).attr('data-id');
+            utils.toast.dialog('提示', '你确定要删除帖子', '1', function(r) {
+                if (r) {
+                    utils.toast.tip('删除成功');
+                    $(obj).parents('.circle-item').remove()
+                }
+            })
+        })
+
+
+
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/style/css/weui.min.css?t=1">
+    <link rel="stylesheet" type="text/css" href="static/style/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/style/css/iconfont.css">
+    <title></title>
+</head>
+
+<body>
+    <div id="loadingToast" class="weui_loading_toast">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <div class="weui_loading">
+                <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+            </div>
+            <p class="weui_toast_content">加载中</p>
+        </div>
+    </div>
+    <div class="index-main">
+        <div class="circlepub ms-controller" ms-controller="circlepubForm">
+            <div class="circle-comment-form">
+                <div class="pub-item">
+                    <input type="text" name="them" class="comment-input" placeholder="标题，4-25个字">
+                </div>
+                <div class="pub-item-textarea">
+                    <textarea class="comment-textarea" name="content" ms-duplex-string="commentContent" placeholder="内容，0-700个字"></textarea>
+                </div>
+                <div class="pub-item">
+                    
+                </div>
+                <div class="dialog-action">
+                    <a href="javascript:;" class="comment-btn-expression" ms-class-active="expressionIsshow" ms-on-tap="openExpression">
+                        <i class="icon icon-smile"></i>
+                    </a>
+                    <a href="javascript:;" class="comment-btn-expression" ms-class-active="imagesIsshow" ms-on-tap="openImages">
+                        <i class="icon icon-picture"></i>
+                    </a>
+                    <div class="right">
+                        <a href="javascript:;" class="weui_btn weui_btn_primary" ms-click="sendForum">发表</a>
+                    </div>
+                </div>
+                <div class="comment-expression" ms-visible="expressionIsshow">
+                    <div class="expression-list">
+                        <div class="expression-content">
+                            <div class="panel">
+                                <ul class="emotions">
+                                    <li><i class="emotions-item" data-title="微笑" data-gifurl="0"></i></li>
+                                    <li><i class="emotions-item" data-title="撇嘴" data-gifurl="1"></i></li>
+                                    <li><i class="emotions-item" data-title="色" data-gifurl="2"></i></li>
+                                    <li><i class="emotions-item" data-title="发呆" data-gifurl="3"></i></li>
+                                    <li><i class="emotions-item" data-title="得意" data-gifurl="4"></i></li>
+                                    <li><i class="emotions-item" data-title="流泪" data-gifurl="5"></i></li>
+                                    <li><i class="emotions-item" data-title="害羞" data-gifurl="6"></i></li>
+                                    <li><i class="emotions-item" data-title="闭嘴" data-gifurl="7"></i></li>
+                                    <li><i class="emotions-item" data-title="睡" data-gifurl="8"></i></li>
+                                    <li><i class="emotions-item" data-title="大哭" data-gifurl="9"></i></li>
+                                    <li><i class="emotions-item" data-title="尴尬" data-gifurl="10"></i></li>
+                                    <li><i class="emotions-item" data-title="发怒" data-gifurl="11"></i></li>
+                                    <li><i class="emotions-item" data-title="调皮" data-gifurl="12"></i></li>
+                                    <li><i class="emotions-item" data-title="呲牙" data-gifurl="13"></i></li>
+                                    <li><i class="emotions-item" data-title="惊讶" data-gifurl="14"></i></li>
+                                    <li><i class="emotions-item" data-title="难过" data-gifurl="15"></i></li>
+                                    <li><i class="emotions-item" data-title="酷" data-gifurl="16"></i></li>
+                                    <li><i class="emotions-item" data-title="冷汗" data-gifurl="17"></i></li>
+                                    <li><i class="emotions-item" data-title="抓狂" data-gifurl="18"></i></li>
+                                    <li><i class="emotions-item" data-title="吐" data-gifurl="19"></i></li>
+                                    <li><i class="emotions-item" data-title="" data-gifurl=""></i></li>
+                                </ul>
+                            </div>
+                            <div class="panel">
+                                <ul class="emotions">
+                                    <li><i class="emotions-item" data-title="偷笑" data-gifurl="20"></i></li>
+                                    <li><i class="emotions-item" data-title="可爱" data-gifurl="21"></i></li>
+                                    <li><i class="emotions-item" data-title="白眼" data-gifurl="22"></i></li>
+                                    <li><i class="emotions-item" data-title="傲慢" data-gifurl="23"></i></li>
+                                    <li><i class="emotions-item" data-title="饥饿" data-gifurl="24"></i></li>
+                                    <li><i class="emotions-item" data-title="困" data-gifurl="25"></i></li>
+                                    <li><i class="emotions-item" data-title="惊恐" data-gifurl="26"></i></li>
+                                    <li><i class="emotions-item" data-title="流汗" data-gifurl="27"></i></li>
+                                    <li><i class="emotions-item" data-title="憨笑" data-gifurl="28"></i></li>
+                                    <li><i class="emotions-item" data-title="大兵" data-gifurl="29"></i></li>
+                                    <li><i class="emotions-item" data-title="奋斗" data-gifurl="30"></i></li>
+                                    <li><i class="emotions-item" data-title="咒骂" data-gifurl="31"></i></li>
+                                    <li><i class="emotions-item" data-title="疑问" data-gifurl="32"></i></li>
+                                    <li><i class="emotions-item" data-title="嘘" data-gifurl="33"></i></li>
+                                    <li><i class="emotions-item" data-title="晕" data-gifurl="34"></i></li>
+                                    <li><i class="emotions-item" data-title="折磨" data-gifurl="35"></i></li>
+                                    <li><i class="emotions-item" data-title="衰" data-gifurl="36"></i></li>
+                                    <li><i class="emotions-item" data-title="骷髅" data-gifurl="37"></i></li>
+                                    <li><i class="emotions-item" data-title="敲打" data-gifurl="38"></i></li>
+                                    <li><i class="emotions-item" data-title="再见" data-gifurl="39"></i></li>
+                                    <li><i class="emotions-item" data-title="" data-gifurl=""></i></li>
+                                </ul>
+                            </div>
+                            <div class="panel">
+                                <ul class="emotions">
+                                    <li><i class="emotions-item" data-title="擦汗" data-gifurl="40"></i></li>
+                                    <li><i class="emotions-item" data-title="抠鼻" data-gifurl="41"></i></li>
+                                    <li><i class="emotions-item" data-title="鼓掌" data-gifurl="42"></i></li>
+                                    <li><i class="emotions-item" data-title="糗大了" data-gifurl="43"></i></li>
+                                    <li><i class="emotions-item" data-title="坏笑" data-gifurl="44"></i></li>
+                                    <li><i class="emotions-item" data-title="左哼哼" data-gifurl="45"></i></li>
+                                    <li><i class="emotions-item" data-title="右哼哼" data-gifurl="46"></i></li>
+                                    <li><i class="emotions-item" data-title="哈欠" data-gifurl="47"></i></li>
+                                    <li><i class="emotions-item" data-title="鄙视" data-gifurl="48"></i></li>
+                                    <li><i class="emotions-item" data-title="委屈" data-gifurl="49"></i></li>
+                                    <li><i class="emotions-item" data-title="快哭了" data-gifurl="50"></i></li>
+                                    <li><i class="emotions-item" data-title="阴险" data-gifurl="51"></i></li>
+                                    <li><i class="emotions-item" data-title="亲亲" data-gifurl="52"></i></li>
+                                    <li><i class="emotions-item" data-title="吓" data-gifurl="53"></i></li>
+                                    <li><i class="emotions-item" data-title="可怜" data-gifurl="54"></i></li>
+                                    <li><i class="emotions-item" data-title="菜刀" data-gifurl="55"></i></li>
+                                    <li><i class="emotions-item" data-title="西瓜" data-gifurl="56"></i></li>
+                                    <li><i class="emotions-item" data-title="啤酒" data-gifurl="57"></i></li>
+                                    <li><i class="emotions-item" data-title="篮球" data-gifurl="58"></i></li>
+                                    <li><i class="emotions-item" data-title="乒乓" data-gifurl="59"></i></li>
+                                    <li><i class="emotions-item" data-title="" data-gifurl=""></i></li>
+                                </ul>
+                            </div>
+                            <div class="panel">
+                                <ul class="emotions">
+                                    <li><i class="emotions-item" data-title="咖啡" data-gifurl="60"></i></li>
+                                    <li><i class="emotions-item" data-title="饭" data-gifurl="61"></i></li>
+                                    <li><i class="emotions-item" data-title="猪头" data-gifurl="62"></i></li>
+                                    <li><i class="emotions-item" data-title="玫瑰" data-gifurl="63"></i></li>
+                                    <li><i class="emotions-item" data-title="凋谢" data-gifurl="64"></i></li>
+                                    <li><i class="emotions-item" data-title="示爱" data-gifurl="65"></i></li>
+                                    <li><i class="emotions-item" data-title="爱心" data-gifurl="66"></i></li>
+                                    <li><i class="emotions-item" data-title="心碎" data-gifurl="67"></i></li>
+                                    <li><i class="emotions-item" data-title="蛋糕" data-gifurl="68"></i></li>
+                                    <li><i class="emotions-item" data-title="闪电" data-gifurl="69"></i></li>
+                                    <li><i class="emotions-item" data-title="炸弹" data-gifurl="70"></i></li>
+                                    <li><i class="emotions-item" data-title="刀" data-gifurl="71"></i></li>
+                                    <li><i class="emotions-item" data-title="足球" data-gifurl="72"></i></li>
+                                    <li><i class="emotions-item" data-title="瓢虫" data-gifurl="73"></i></li>
+                                    <li><i class="emotions-item" data-title="便便" data-gifurl="74"></i></li>
+                                    <li><i class="emotions-item" data-title="月亮" data-gifurl="75"></i></li>
+                                    <li><i class="emotions-item" data-title="太阳" data-gifurl="76"></i></li>
+                                    <li><i class="emotions-item" data-title="礼物" data-gifurl="77"></i></li>
+                                    <li><i class="emotions-item" data-title="拥抱" data-gifurl="78"></i></li>
+                                    <li><i class="emotions-item" data-title="强" data-gifurl="79"></i></li>
+                                    <li><i class="emotions-item" data-title="" data-gifurl=""></i></li>
+                                </ul>
+                            </div>
+                            <div class="panel">
+                                <ul class="emotions">
+                                    <li><i class="emotions-item" data-title="弱" data-gifurl="80"></i></li>
+                                    <li><i class="emotions-item" data-title="握手" data-gifurl="81"></i></li>
+                                    <li><i class="emotions-item" data-title="胜利" data-gifurl="82"></i></li>
+                                    <li><i class="emotions-item" data-title="抱拳" data-gifurl="83"></i></li>
+                                    <li><i class="emotions-item" data-title="勾引" data-gifurl="84"></i></li>
+                                    <li><i class="emotions-item" data-title="拳头" data-gifurl="85"></i></li>
+                                    <li><i class="emotions-item" data-title="差劲" data-gifurl="86"></i></li>
+                                    <li><i class="emotions-item" data-title="爱你" data-gifurl="87"></i></li>
+                                    <li><i class="emotions-item" data-title="NO" data-gifurl="88"></i></li>
+                                    <li><i class="emotions-item" data-title="OK" data-gifurl="89"></i></li>
+                                    <li><i class="emotions-item" data-title="爱情" data-gifurl="90"></i></li>
+                                    <li><i class="emotions-item" data-title="飞吻" data-gifurl="91"></i></li>
+                                    <li><i class="emotions-item" data-title="跳跳" data-gifurl="92"></i></li>
+                                    <li><i class="emotions-item" data-title="发抖" data-gifurl="93"></i></li>
+                                    <li><i class="emotions-item" data-title="怄火" data-gifurl="94"></i></li>
+                                    <li><i class="emotions-item" data-title="转圈" data-gifurl="95"></i></li>
+                                    <li><i class="emotions-item" data-title="磕头" data-gifurl="96"></i></li>
+                                    <li><i class="emotions-item" data-title="回头" data-gifurl="97"></i></li>
+                                    <li><i class="emotions-item" data-title="跳绳" data-gifurl="98"></i></li>
+                                    <li><i class="emotions-item" data-title="挥手" data-gifurl="99"></i></li>
+                                    <li><i class="emotions-item" data-title="" data-gifurl=""></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-nav">
+                            <span class="origin" ms-class-active="active==1"></span>
+                            <span class="origin" ms-class-active="active==2"></span>
+                            <span class="origin" ms-class-active="active==3"></span>
+                            <span class="origin" ms-class-active="active==4"></span>
+                            <span class="origin" ms-class-active="active==5"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="circlepub-images" ms-visible="imagesIsshow">
+                    <!-- <ul class="images-list">
+                        <li ms-repeat="commentSrc">
+                            <img ms-attr-src="el">
+                            <a href="javascript:;" class="image-remove" ms-on-tap="removeImg"><i class="icon icon-close "></i></a>
+                        </li>
+                        <li><a href="javascript:;" class="image-add" id="upload-Images">+</a></li>
+                    </ul> -->
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_bd">
+                                        <ul class="weui_uploader_files">
+
+                                            <li ms-repeat="imageFileData" class="weui_uploader_file" ms-css-background-image="'url('+ el.filedata +')'">
+                                                <a href="javascript:;" class="uploader-fil-remove" ms-click="onFilesRemove(el)"><i class="weui_icon_clear"></i></a>
+                                                <div class="weui_uploader_status_content"></div>
+                
+                                            </li>
+                                            <li class="weui_uploader_file weui_uploader_status" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)">
+                                            <a href="javascript:;" class="uploader-fil-remove" ms-click="onFilesRemove(el)"><i class="weui_icon_clear"></i></a>
+                                            <div class="weui_uploader_status_content">
+                                                50%
+                                            </div>
+                                            </li>
+                                        </ul>
+                                        <div class="weui_uploader_input_wrp">
+                                            <a href="" id="upload-Images"></a>
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="static/js/require.config.js"></script>
+    <script type="text/javascript" src="static/js/require.js"></script>
+    <script src="static/js/lib/plupload/plupload.min.js"></script>
+    <script>
+    require(['avalon','utils'], function(avalon,utils) {
+
+    	$('#loadingToast').remove();
+
+        var c_circlepubform = avalon.define({
+            $id: 'circlepubForm',
+            active: 1,
+            expressionIsshow: false,
+            commentDialogIsshow: false,
+            imagesIsshow: false,
+            commentContent: '',
+            selectedUser: [],
+            selectedUserinfo: {},
+            location: '',
+            imageFileData:[],
+            onFilesRemove:function(elem){
+                c_circlepubform.imageFileData.remove(elem);
+                uploaderImages.removeFile(elem.file);
+            },
+            openExpression: function() {
+                c_circlepubform.expressionIsshow = !c_circlepubform.expressionIsshow;
+                if (c_circlepubform.imagesIsshow) {
+                    c_circlepubform.imagesIsshow = false;
+                }
+            },
+            closeCommentDialog: function() {
+                c_circlepubform.commentDialogIsshow = false;
+            },
+            openImages: function() {
+                c_circlepubform.imagesIsshow = !c_circlepubform.imagesIsshow;
+                if (c_circlepubform.expressionIsshow) {
+                    c_circlepubform.expressionIsshow = false;
+                }
+            },
+            sendForum: function() {
+                if ($('input[name="them"]').val() == '') {
+                    utils.toast.prompt('标题不能为空');
+                    return;
+                }
+                if($('textarea[name="content"]').val() == ''){
+                	utils.toast.prompt('内容不能为空');
+                    return;
+                }
+
+                
+                utils.toast.loading('发帖中...');
+
+                var postdata = {
+                    title: $('input[name="them"]').val(),
+                    content: $('textarea[name="content"]').val(),
+                    typecode:'',
+                    img:''
+                }
+
+                utils.ajax('/Shop/Communication/PublishInvitation', postdata, function(result) {
+                    if (result && result.code == "0") {
+                        utils.toast.tip('发帖成功');
+                        if (util.isapp()) {
+                            twapp.pushPostSucces();
+                        }
+                        window.location.href = '';
+                    } else {
+                        utils.toast.tip('发帖失败');
+                    }
+                })
+
+            },
+            addimage: function() {
+
+
+
+                wx.chooseImage({
+                    count: 9, // 默认9
+                    sizeType: ['original', 'compressed'],
+                    sourceType: ['album', 'camera'],
+                    success: function(res) {
+                        var localIds = res.localIds;
+                        $(localIds).each(function(index, el) {
+                            $('<li><img src="' + el + '"> <a href="javascript:;" class="image-remove"><i class="icon icon-close"></i></a></li>').insertBefore($('.images-list .image-add').parent()).find('.image-remove').bind('tap', function(event) {
+                                $(this).parents('li').remove();
+                            });
+                        });
+                    }
+                });
+            }
+        });
+        avalon.scan();
+        //表情
+        var startX = 0,
+            left = 0;
+        $('.expression-content')[0].addEventListener('touchstart', function(event) {
+            var touch = event.targetTouches[0];
+            startX = touch.pageX;
+            left = 0;
+            event.preventDefault();
+        });
+        $('.expression-content')[0].addEventListener('touchmove', function(event) {
+            var touch = event.targetTouches[0];
+            var translatex = (c_circlepubform.active - 1) * 252;
+            left = touch.pageX - startX;
+            translatex = translatex - left;
+
+            if (left > 0) {
+                if (c_circlepubform.active == 1) {
+                    return;
+                }
+            } else {
+                if (c_circlepubform.active == 5) {
+                    return;
+                }
+            };
+            $('.expression-content').css({
+                '-webkit-transform': 'translatex(-' + translatex + 'px)',
+                'transform': 'translatex(-' + translatex + 'px)'
+            });
+            event.preventDefault();
+        });
+        $('.expression-content')[0].addEventListener('touchend', function(event) {
+            if (Math.abs(left) > 50) {
+                if (left > 0) {
+                    c_circlepubform.active == 1 ? '' : c_circlepubform.active--;
+                } else {
+                    c_circlepubform.active < 5 ? c_circlepubform.active++ : '';
+                }
+            }
+            $('.expression-content').css({
+                '-webkit-transform': 'translatex(-' + (c_circlepubform.active - 1) * 252 + 'px)',
+                'transform': 'translatex(-' + (c_circlepubform.active - 1) * 252 + 'px)'
+            });
+            event.preventDefault();
+        });
+
+        $('.emotions i').on('tap', function(event) {
+            var title = $(this).attr('data-title');
+            if (title == "") {
+                //c_commentform.commentContent
+            } else {
+                c_circlepubform.commentContent += '[' + $(this).attr('data-title') + ']';
+            }
+
+        })
+
+        
+
+        function upfiles(option){
+            var defalut = {
+                id:'',
+                filesWarp:'',
+                maxnumber:5,//最大文件个数
+                FilesAdded:function(filedata,files){},//添加文件触发
+                UploadComplete:function(uploader,files){},//图片上传完成
+                FileUploaded:function(uploader,file,responseObject){},//某一个上传完毕
+                UploadProgress:function(uploader,file){},//上传过程中触发
+                Error:function(uploader,errObject){}//错误
+            },uploader;
+
+            var _init = function(){
+                uploader = new plupload.Uploader({
+                    browse_button : defalut.id, //触发文件选择对话框的按钮，为那个元素id
+                    url : '/SalesMan/SalesUser/Httpuploadimg', //服务器端的上传页面地址
+                    flash_swf_url : 'Moxie.swf', //swf文件，当需要使用swf方式进行上传时需要配置该参数
+                    silverlight_xap_url : 'Moxie.xap', //silverlight文件，当需要使用silverlight方式进行上传时需要配置该参数
+                    file_data_name:'files',
+                    filters: {
+                      mime_types : [ //只允许上传图片和zip文件
+                        { title : "Image files", extensions : "jpg,gif,png" }
+                      ],
+                      prevent_duplicates : true //不允许选取重复文件
+                    }
+                });
+
+
+                uploader.init();
+
+                uploader.bind('FilesAdded',function(uploader,files){
+                    var resultdata = [], i = 0;
+                    $(files).each(function (index, el) {
+                        if (index > defalut.maxnumber) {
+                            uploader.removeFile(el);
+                        } else {
+                            if (uploader.files.length > defalut.maxnumber) {
+                                uploader.removeFile(el);
+                            } else {
+                                resultdata.push({
+                                    filedata: window[window.webkitURL ? 'webkitURL' : 'URL']['createObjectURL'](el.getNative()),
+                                    file: el
+                                });
+                            }
+                            
+                        }
+                        
+                    });
+
+                    console.log(resultdata);
+                    defalut.FilesAdded.call(this, resultdata, files);
+                    
+                })
+
+                uploader.bind('UploadComplete',defalut.UploadComplete);
+                uploader.bind('FileUploaded',function(uploader,file,responseObject){
+                    var result = eval('('+ responseObject.response +')');
+                    var nowobj = $($(defalut.filesWarp).find('.weui_uploader_file')[uploader.total.uploaded-1]);
+                    if(result && result.code=='0'){
+                        nowobj.attr('imgsrc',result.data);
+                    }
+                    nowobj.find('.weui_uploader_status_content').html('<i class="weui_icon_success"></i>');
+                    nowobj.find('.uploader-fil-remove').remove();
+                    defalut.FileUploaded.call(this,uploader,file,responseObject);
+                });
+
+                uploader.bind('UploadProgress',function(uploader,file){
+                    $($(defalut.filesWarp).find('.weui_uploader_file')[uploader.total.uploaded]).addClass('weui_uploader_status').find('.weui_uploader_status_content').html(file.percent+'%');
+                    defalut.UploadProgress.call(this,uploader,file);
+                });
+
+                uploader.bind('Error',defalut.Error);
+
+                return uploader;
+            }
+
+            defalut = $.extend({},defalut, option);
+
+            return {
+                init:function(option){
+                    return _init();
+                },
+                start:function(){
+                    uploader.start();
+                }
+            }
+        }
+
+
+
+ 
+
+        var uploaderImages = new upfiles({
+            id:'upload-Images',
+            filesWarp:'.uploader-files-doorphot',
+            FilesAdded:function(filedata,files){
+                c_circlepubform.imageFileData.pushArray(filedata);
+            },
+            UploadComplete:function(uploader,files){
+                var imgsrcs = [];
+                $('.uploader-files-doorphot').find('.weui_uploader_file').each(function (index, el) {
+                    imgsrcs.push($(el).attr('imgsrc'));
+                });
+                //distributorData.doorphot = imgsrcs.join(',');
+                uploaderImages.start();
+            },
+            Error:function(err){
+                console.log(err);
+            }
+        }).init();
+
+        $('.weui_uploader_input').bind('change',function(){
+            uploaderImages.addFile($('.weui_uploader_input')[0]);
+        })
+
+
+
+    })
+    </script>
+</body>
+
+</html>

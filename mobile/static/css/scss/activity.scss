@@ -1,0 +1,64 @@
+.scratch {
+    min-height: 400px;
+    background: #771718;
+}
+
+.scratch-area {
+    margin: 10px;
+    padding: 20px;
+    background: url('../images/bg_guajingqu2x.png') left top no-repeat;
+    background-size: cover;
+    .scratch-bg {
+        background: #d6d6d6;
+        height: 80px;
+    }
+}
+
+.scratch-content {
+    color: #fff;
+    padding: 20px;
+    h3 {
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 13px;
+        visibility: visible;
+    }
+}
+
+.adventures-area {
+    /* 大转盘样式 */
+    display: block;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    line-height: normal;
+    .turnplate {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+    .turnplate canvas.item {
+        width: 100%;
+    }
+    .turnplate img.pointer {
+        position: absolute;
+        width: 31.5%;
+        height: 42.5%;
+        left: 34.6%;
+        top: 23%;
+    }
+}
+
+
+//
+.buynow{
+    display: inline-block;
+    padding:2px 5px;
+    font-size: 13px;
+    color:#e61e19;
+    border-radius: 3px;
+    border:1px solid #e61e19;
+    margin-top: -5px;
+}

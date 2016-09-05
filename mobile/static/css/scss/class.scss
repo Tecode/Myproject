@@ -1,0 +1,38 @@
+.class-content{
+	.class-left{
+		position: absolute;
+		top: 0rem;
+		left: 0;
+		bottom: 0rem;
+		width: 93px;
+		border: 1px solid #d2d2d2;
+		border-width: 1px 1px 0 0;
+	}
+	.class-right{
+		position: absolute;
+		top: 0;
+		left: 93px;
+		right: 0;
+		bottom: 0;
+		border-top: 1px solid #d2d2d2;
+	}
+	.class-item{
+		display: block;
+		border-bottom: 1px solid #d2d2d2;
+		.active{
+			display: none;
+		}
+		&.active{
+			.default{
+				display: none;
+			}
+			.active{
+				display: block;
+			}
+		}
+	}
+}
+
+.class-commodity-list{
+	border:none;
+}

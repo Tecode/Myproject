@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <title>有点火</title>
+    <style type="text/css" media="screen">
+
+    </style>
+</head>
+
+<body>
+    <div class="page-group ms-controller" ms-controller="page">
+        <div class="page page-current">
+            <header class="bar bar-nav bar-nav-red order-bar">
+                <a href="javascript:history.back(-1)" class="icon icon-left pull-left"></a>
+                <h1 class="title">签到领币</h1>
+            </header>
+            <div class="content find-content">
+                <div class="page-current">
+                    <div class="me-header" style="background:#e61e19">
+                        <div class="me-head-info">
+                            <div class="wallet-head">
+                                <img class="avter" src="static/images/personal/tup@2x.png">
+                                <div class="user-info">
+                                    <div class="user-title">{{balanceData}}个</div>
+                                    <div class="user-subtitle" style="font-size:12px;">
+                                    	<img src="static/images/personal/yiqiandao@2x.png" width="16" alt="" style="margin-right:5px;vertical-align: middle;">签到
+                                    </div>
+                                </div>
+                                <a href="" class="head-link-rule">
+                                    <img src="static/images/personal/cha@2x.png" height="12" width="12" alt=""> 查看金币兑换规则
+                                </a>
+                            </div>
+                        </div>
+                        <div class="signin-record">
+                        	<ul class="record-list">
+                        		<li class="list-item">
+                        			<div>+2</div>
+                        			<div class="record-line"></div>
+                        			<div style="padding:0 10px;">04.22</div>
+                        		</li>
+                        		<li class="list-item">
+                        			<div>+2</div>
+                        			<div class="record-line"></div>
+                        			<div style="padding:0 10px;">04.22</div>
+                        		</li>
+                        		<li class="list-item">
+                        			<div>+2</div>
+                        			<div class="record-line"></div>
+                        			<div style="padding:0 10px;">04.22</div>
+                        		</li>
+                        		<li class="list-item">
+                        			<div>+2</div>
+                        			<div class="record-line"></div>
+                        			<div style="padding:0 10px;">04.22</div>
+                        		</li>
+                        		<li class="list-item">
+                        			<div>+2</div>
+                        			<div class="record-line"></div>
+                        			<div style="padding:0 10px;">04.22</div>
+                        		</li>
+                        	</ul>
+                            
+                        </div>
+                    </div>
+                    <div class="main-recommend">
+                        <div class="recommend-title">
+                            <img src="static/images/like@2x.png" class="icon-recommend" alt="猜你喜欢">
+                            <span class="recommend-text">猜你喜欢</span>
+                        </div>
+                        <ul class="commodity-list recommend-list">
+                            <li class="commodity-item" ms-repeat="recommendData">
+                                <a class="commodity-link" href="#">
+                                    <div class="commodity-image">
+                                        <img ms-attr-src="el.imgurl" alt="">
+                                    </div>
+                                    <h3 class="commodity-title">{{el.productname}}</h3>
+                                    <div class="commodity-info">
+                                        <div class="price">￥{{el.price|float(2)}}</div>
+                                        <div class="cart">
+                                            <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="commodity-item">
+                                <a class="commodity-link" href="#">
+                                    <div class="commodity-image">
+                                        <img src="static/images/shangpin640.jpg" alt="">
+                                    </div>
+                                    <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                    <div class="commodity-info">
+                                        <div class="price">￥33.3</div>
+                                        <div class="cart">
+                                            <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="commodity-item">
+                                <a class="commodity-link" href="#">
+                                    <div class="commodity-image">
+                                        <img src="static/images/shangpin640.jpg" alt="">
+                                    </div>
+                                    <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                    <div class="commodity-info">
+                                        <div class="price">￥33.3</div>
+                                        <div class="cart">
+                                            <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="commodity-item">
+                                <a class="commodity-link" href="#">
+                                    <div class="commodity-image">
+                                        <img src="static/images/shangpin640.jpg" alt="">
+                                    </div>
+                                    <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                    <div class="commodity-info">
+                                        <div class="price">￥33.3</div>
+                                        <div class="cart">
+                                            <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['avalon', 'util'], function(avalon, util) {
+        var c_page = avalon.define({
+            $id: 'page',
+            balanceData: '0',
+            active: 'all',
+            balanceListData: [],
+            cheageTab: function(tab) {
+                c_page.active = tab;
+                getBalanceList();
+            },
+            recommendData: []
+        });
+        avalon.scan();
+
+        var getRecommendData = function() {
+            util.ajax('/Shop/Shop/GuessLike', 'get', {}, function(result) {
+                if (result && result.code == '0') {
+                    c_index.recommendData = result.data
+                }
+            })
+        }
+        getRecommendData();
+    })
+    </script>
+</body>
+
+</html>

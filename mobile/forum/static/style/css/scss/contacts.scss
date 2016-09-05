@@ -1,0 +1,232 @@
+
+.search{
+    position: relative;
+    height: 48px;
+    background: #f5f5f5;
+    padding:4px 0;
+    width: 100%;
+}
+/*默认搜索图标*/
+.search-icon{
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color:#C1C1C1;
+    height: 40px;
+    line-height: 40px;
+}
+.search-icon .search-text{
+    display: none;
+}
+/*默认搜索框*/
+.search .search-input{
+    position: absolute;
+    top: 4px;
+    left: 30px;
+    right: 20px;
+}
+.search .search-input input{
+    border:none;
+    padding:10px 0px;
+    font-size: 16px;
+    height: 40px;
+    background: #f5f5f5;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+/*获取焦点*/
+.search.focus .search-input{
+    left: 10px;
+    right: 70px;
+}
+.search.focus .search-input input{
+    background: #fff;
+    padding:10px 8px;
+ }
+.search.focus .search-icon{
+    position: absolute;
+    width:50px;
+    right: 10px;
+    border-radius: 3px;
+    color:#377EF0;
+}
+.search.focus .search-icon:active{
+    //background: #ccc;
+}
+.search.focus .search-icon .search-text{
+    display: inline-block;
+}
+
+/*滚动*/
+.scroll-warp{
+    position: absolute;
+    top: 48px;
+    bottom: 0px;
+    left: 0px;
+    right:0px;
+    width: auto;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    -webkit-box-sizing : border-box;
+}
+.deptuser-selected-warp{
+    bottom: 48px;
+}
+.contacts-action{
+    position: absolute;
+    height: 48px;
+    line-height: 48px;
+    bottom: 0;
+    width: 100%;
+    padding:0 10px;
+    border-top: 1px solid #E8E8E8;
+    a{
+        color:#3271D5;
+        &.disable{
+            color:#A7A7A7;
+        }
+    }
+}
+
+.tree-item{
+    clear: both;
+    overflow: hidden; 
+}
+.tree-item .item-inner{
+    padding:14px 50px 14px 4px;
+    border-bottom: 1px solid #E8E7E7;
+    color:#5E5E5E;
+    position: relative;
+}
+.tree-item .icon-right{
+    display: inline-block;
+}
+.tree-item .icon-right.tree-down{
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg);    /* IE 9 */
+    -moz-transform:rotate(90deg);   /* Firefox */
+    -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+    -o-transform:rotate(90deg);     /* Opera */
+}
+
+.tree-item .item-right{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    height: 32px;
+    line-height: 32px;
+    width: 80px;
+    margin-top: -16px;
+    color:#999999;
+    text-align: right;
+}
+.tree-item .item-right i{
+    color:#cdcdcd;
+}
+
+.tree-item .item-warp{
+    padding-left: 10px;
+}
+
+.no-child .item-warp{
+    padding-left: 24px;
+}
+
+.tree-item ul{
+    display: none;
+}
+
+
+.user-list{
+
+}
+.user-list .list-title{
+    background: #ececf4;
+    padding:5px 10px;
+    color:#96989b;
+}
+.user-list .list-item{
+    background: #fff;
+    border-bottom: 1px solid #F5F5F5;
+}
+.user-list .list-item:last-child{
+    border:none;
+}
+.user-list .list-item img{
+    vertical-align: middle;
+}
+.user-list .list-item .user-item{
+    display: block;
+    padding:10px;
+}
+.user-list .list-item a:active{
+    background: #dfdfdf;
+}
+.list-item .item-title{
+    margin-left: 5px;
+}
+.user-item{
+    .right{
+        min-width: 50px;
+        text-align: right;
+        padding:7px 10px;
+    }
+    
+}
+
+.py-nav{
+    position: absolute;
+    right: 0px;
+    top: 48px;
+    width: 16px;
+    height: 100%;
+    background: #fff;
+}
+.py-nav a{
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color:#1f89fd;
+}
+
+.spa-page{
+    overflow: hidden;
+}
+.spa-page .page{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    background: #fff;
+}
+
+/*动画*/
+
+.animation {
+    -webkit-animation: fadeInRightBig .5s 0s ease both;
+    -moz-animation: fadeInRightBig .5s 0s ease both;
+}
+
+@-webkit-keyframes fadeInRightBig {
+    0% {
+        -webkit-transform: translateX(500px)
+    }
+    100% {
+        -webkit-transform: translateX(0)
+    }
+}
+
+@-moz-keyframes fadeInRightBig {
+    0% {
+        -moz-transform: translateX(500px)
+    }
+    100% {
+        -moz-transform: translateX(0)
+    }
+}

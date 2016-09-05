@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" href="static/js/lib/mobile/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <link rel="stylesheet" type="text/css" href="static/js/lib/swiper/css/swiper.min.css">
+    <title>有点火</title>
+</head>
+
+<body>
+    <div class="page-group" ms-controller="pageIndex">
+        <div class="page page-current">
+            <header class="bar bar-nav">
+                <a class="icon icon-menu pull-left"></a>
+                <a class="icon icon-message pull-right"></a>
+                <a class="main-search" href="#sbox"></a>
+                <!-- <div class="searchbar">
+				    <a class="searchbar-cancel">取消</a>
+				    <div class="search-input">
+				        <label class="icon icon-search" for="search"></label>
+				        <input type="search" id='search' placeholder='输入关键字...' />
+				    </div>
+				</div> -->
+            </header>
+            <nav class="bar bar-tab">
+                <a class="tab-item active" href="index.html">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item" href="class.html">
+                    <span class="icon icon-menu"></span>
+                    <span class="tab-label">分类</span>
+                </a>
+                <a class="tab-item" href="find.html">
+                    <span class="icon icon-app"></span>
+                    <span class="tab-label">发现</span>
+                </a>
+                <a class="tab-item" href="cart.html">
+                    <span class="icon icon-cart"></span>
+                    <span class="tab-label">购物车</span>
+                </a>
+                <a class="tab-item" href="personal.html">
+                    <span class="icon icon-me"></span>
+                    <span class="tab-label">我的</span>
+                </a>
+            </nav>
+            <div class="content">
+                <!-- banner -->
+                <div class="banner">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" ms-repeat="bannerData">
+                                <a ms-attr-href="el.linkurl"><img ms-attr-src="el.imgurl" width="100%" ms-attr-alt="el.title"></a>
+                            </div>
+                            <!-- <div class="swiper-slide"><img src="static/images/banner01@2x.png" width="100%" alt=""></div>
+				            <div class="swiper-slide"><img src="static/images/banner01@2x.png" width="100%" alt=""></div>
+				            <div class="swiper-slide"><img src="static/images/banner01@2x.png" width="100%" alt=""></div>
+				            <div class="swiper-slide"><img src="static/images/banner01@2x.png" width="100%" alt=""></div> -->
+                        </div>
+                        <div class="swiper-pagination" style="text-align:right;"></div>
+                    </div>
+                    <!-- <div class="swiper-container" data-autoHeight='true' data-space='10'>
+					    <div class="swiper-wrapper">
+					      <div class="swiper-slide"><img src="images/banner01@2x.png" alt=""></div>
+					      <div class="swiper-slide"><img src="images/banner@2x.png" alt=""></div>
+					      <div class="swiper-slide"><img src="images/banner01@2x.png" alt=""></div>
+					    </div>
+					    <div class="swiper-pagination"></div>
+					  </div> -->
+                </div>
+                <!-- 导航 -->
+                <nav class="main-nav">
+                    <a class="nav-item" href="cookbook_class.html">
+                        <div>
+                            <img class="nav-icon" src="static/images/caipu@2x.png" alt="智能菜谱">
+                            <span class="nav-text">智能菜谱</span>
+                        </div>
+                    </a>
+                    <a class="nav-item" href="class.html">
+                        <div>
+                            <img class="nav-icon" src="static/images/shangpin@2x.png" alt="商品分类">
+                            <span class="nav-text">商品分类</span>
+                        </div>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <div>
+                            <img class="nav-icon" src="static/images/jiaoliu@2x.png" alt="餐调交流">
+                            <span class="nav-text">餐调交流</span>
+                        </div>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <div>
+                            <img class="nav-icon" src="static/images/dashi@2x.png" alt="大师支招">
+                            <span class="nav-text">大师支招</span>
+                        </div>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <div>
+                            <img class="nav-icon" src="static/images/jifen@2x.png" alt="积分商城">
+                            <span class="nav-text">积分商城</span>
+                        </div>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <div>
+                            <img class="nav-icon" src="static/images/qiandao@2x.png" alt="签到领币">
+                            <span class="nav-text">签到领币</span>
+                        </div>
+                    </a>
+                    <a class="nav-item" href="card.html">
+                        <div>
+                            <img class="nav-icon" src="static/images/kaquan@2x.png" alt="卡券中心">
+                            <span class="nav-text">卡券中心</span>
+                        </div>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <div>
+                            <img class="nav-icon" src="static/images/fenxiang@2x.png" alt="分享有礼">
+                            <span class="nav-text">分享有礼</span>
+                        </div>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <div>
+                            <img class="nav-icon" src="static/images/zhixiao@2x.png" alt="直销中心">
+                            <span class="nav-text">直销中心</span>
+                        </div>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <div>
+                            <img class="nav-icon" src="static/images/quanbu@2x.png" alt="全部">
+                            <span class="nav-text">全部</span>
+                        </div>
+                    </a>
+                </nav>
+                <!-- 头条 -->
+                <div class="main-news">
+                    <div class="main-news-title">
+                        <img src="static/images/lingdang@2x.png" class="icon-news" alt="">
+                        <img class="news-imgtext" src="static/images/toutiao@2x.png" height="14" alt="">
+                    </div>
+                    <div class="main-news-list">
+                        <a class="list-item" href="">
+                            <img class="icon-item" src="static/images/circle@2x.png" alt=""> 有点火头条内容
+                        </a>
+                        <a class="list-item" href="">
+                            <img class="icon-item" src="static/images/circle@2x.png" alt=""> 有点火在国内果然比较火有点火在国内果然比较火有点火在国内果然比较火
+                        </a>
+                    </div>
+                </div>
+                <!-- 活动 -->
+                <div class="main-activity">
+                    <a class="activity-item" ms-repeat="activityData" ms-attr-href="{{el.linkurl}}">
+                        <img ms-attr-src="{{el.imgurl}}" width="100%" ms-attr-alt="{{el.title}}">
+                    </a>
+                    <a class="activity-item" href="#">
+                        <img src="static/images/guanggaotiao@2x.png" width="100%" alt="">
+                    </a>
+                </div>
+                <!-- 菜谱 -->
+                <div class="main-cookbook">
+                    <div class="main-cookbook-head ">
+                        <a class="cookbook-recommend-title" href="#">
+                            <img src="static/images/tuijian@2x.png" width="100%" alt="">
+                        </a>
+                        <div class="main-cookbook-right">
+                            <ul class="main-cookbook-list">
+                                <li class="cookbook-item" ms-repeat="cookbookData.firstData">
+                                    <a href="#">
+                                        <img ms-attr-src="el.dishesimage" width="100%" alt="">
+                                        <div class="main-cookbook-text">
+                                            <div class="cookbook-name">
+                                                <div class="cookbook-name-inner">
+                                                    {{el.dishesname}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="cookbook-item">
+                                    <a href="#">
+                                        <img src="static/images/tututu@2x.png" width="100%" alt="">
+                                        <div class="main-cookbook-text">
+                                            <div class="cookbook-name">
+                                                <div class="cookbook-name-inner">
+                                                    川味香肠
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="main-cookbook-list">
+                        <li class="cookbook-item" ms-repeat="cookbookData.overData">
+                            <a href="#">
+                                <img ms-attr-src="el.dishesimage" width="100%" alt="">
+                                <div class="main-cookbook-text">
+                                    <div class="cookbook-name">
+                                        <div class="cookbook-name-inner">
+                                            {{el.dishesname}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cookbook-item">
+                            <a href="#">
+                                <img src="static/images/main-cookbook_62.png" width="100%" alt="">
+                                <div class="main-cookbook-text main-cookbook-text2">
+                                    <div class="cookbook-name">
+                                        <div class="cookbook-name-inner">麻辣小龙虾</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 广告 -->
+                <div class="main-ad">
+                    <a class="activity-item" ms-repeat="adData" ms-attr-href="{{el.linkurl}}">
+                        <img ms-attr-src="{{el.imgurl}}" width="100%" ms-attr-alt="{{el.title}}">
+                    </a>
+                    <img src="static/images/guanggao02@2x.png" width="100%" alt="">
+                </div>
+                <!-- 推荐产品 -->
+                <table style="width:100%;" class="commodity-list">
+                    <tbody>
+                        <tr>
+                            <td width="50%">
+                                <a class="" href="">
+                                    <img ms-attr-src="productFirstData.frontcover.imgurl" width="100%" alt="">
+                                </a>
+                            </td>
+                            <td width="50%">
+                                <a class="commodity-link" href="#" ms-if="productFirstData.firstdata.productname != ''">
+                                    <div class="commodity-image">
+                                        <img ms-attr-src="productFirstData.firstdata.imgurl == '' ? 'static/images/product_defalut.png' : productFirstData.firstdata.imgurl" alt="">
+                                    </div>
+                                    <h3 class="commodity-title">{{productFirstData.firstdata.productname}}</h3>
+                                    <div class="commodity-info">
+                                        <div class="price">￥{{productFirstData.firstdata.price}}</div>
+                                        <div class="cart" ms-click="onAddCart($event,productFirstData)">
+                                            <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr ms-repeat="productData">
+                            <td width="50%" ms-repeat="el">
+                                <a class="commodity-link" ms-attr-href="'productinfo.html?pcode=' + el.pcode + '&skucode='+el.skucode">
+                                    <div class="commodity-image">
+                                        <img ms-attr-src="el.imgurl" alt="">
+                                    </div>
+                                    <h3 class="commodity-title">{{el.productname}}</h3>
+                                    <div class="commodity-info">
+                                        <div class="price">￥{{el.price}}</div>
+                                        <div class="cart" ms-click="onAddCart($event,el)">
+                                            <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <ul class="commodity-list">
+
+	                <li class="commodity-item" ms-repeat="productData">
+	                    <a class="commodity-link" href="#">
+	                        <div class="commodity-image">
+	                            <img ms-attr-src="el.imgurl" alt="">
+	                        </div>
+	                        <h3 class="commodity-title">{{el.productname}}</h3>
+	                        <div class="commodity-info">
+	                            <div class="price">￥{{el.price}}</div>
+	                            <div class="cart">
+	                                <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+	                            </div>
+	                        </div>
+	                    </a>
+	                </li>
+	                <li class="commodity-item">
+	                    <a class="commodity-link" href="#">
+	                        <div class="commodity-image">
+	                            <img src="static/images/shangpin640.jpg" alt="">
+	                        </div>
+	                        <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+	                        <div class="commodity-info">
+	                            <div class="price">￥33.3</div>
+	                            <div class="cart">
+	                                <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+	                            </div>
+	                        </div>
+	                    </a>
+	                </li>
+	                <li class="commodity-item">
+	                    <a class="commodity-link" href="#">
+	                        <div class="commodity-image">
+	                            <img src="static/images/shangpin640.jpg" alt="">
+	                        </div>
+	                        <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+	                        <div class="commodity-info">
+	                            <div class="price">￥33.3</div>
+	                            <div class="cart">
+	                                <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+	                            </div>
+	                        </div>
+	                    </a>
+	                </li>
+	                <li class="commodity-item">
+	                    <a class="commodity-link" href="#">
+	                        <div class="commodity-image">
+	                            <img src="static/images/shangpin640.jpg" alt="">
+	                        </div>
+	                        <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+	                        <div class="commodity-info">
+	                            <div class="price">￥33.3</div>
+	                            <div class="cart">
+	                                <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+	                            </div>
+	                        </div>
+	                    </a>
+	                </li>
+	            </ul> -->
+                <!-- 猜你喜欢 -->
+                <div class="main-recommend">
+                    <div class="recommend-title">
+                        <img src="static/images/like@2x.png" class="icon-recommend" alt="猜你喜欢">
+                        <span class="recommend-text">猜你喜欢</span>
+                    </div>
+                    <ul class="commodity-list recommend-list">
+                        <li class="commodity-item" ms-repeat="recommendData">
+                            <a class="commodity-link" href="#">
+                                <div class="commodity-image">
+                                    <img ms-attr-src="el.imgurl" alt="">
+                                </div>
+                                <h3 class="commodity-title">{{el.productname}}</h3>
+                                <div class="commodity-info">
+                                    <div class="price">￥{{el.price|float(2)}}</div>
+                                    <div class="cart">
+                                        <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="commodity-item">
+                            <a class="commodity-link" href="#">
+                                <div class="commodity-image">
+                                    <img src="static/images/shangpin640.jpg" alt="">
+                                </div>
+                                <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                <div class="commodity-info">
+                                    <div class="price">￥33.3</div>
+                                    <div class="cart">
+                                        <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="commodity-item">
+                            <a class="commodity-link" href="#">
+                                <div class="commodity-image">
+                                    <img src="static/images/shangpin640.jpg" alt="">
+                                </div>
+                                <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                <div class="commodity-info">
+                                    <div class="price">￥33.3</div>
+                                    <div class="cart">
+                                        <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="commodity-item">
+                            <a class="commodity-link" href="#">
+                                <div class="commodity-image">
+                                    <img src="static/images/shangpin640.jpg" alt="">
+                                </div>
+                                <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                <div class="commodity-info">
+                                    <div class="price">￥33.3</div>
+                                    <div class="cart">
+                                        <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 结束提示 -->
+            </div>
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['sm', 'swiper', 'roll', 'zepto', 'avalon', 'util'], function(sm, swiper, roll, zepto, avalon, util) {
+
+        var url = {
+            getData: '/Shop/Shop/IndexLook',
+            getSelling: '/Shop/Shop/IndexSelling',
+            getCookbook:'/Shop/Shop/Menuseling'
+        }
+
+        //$.init();
+
+
+
+        var c_index = avalon.define({
+            $id: 'pageIndex',
+            bannerData: [{
+                "title": "广告一",
+                "text": "",
+                "imgurl": "http://images.udianhuo.com/Content/tempfile/131012727344768015.png",
+                "linkurl": "http://www.baidu.com",
+                "type": "0"
+            }, {
+                "title": "广告一",
+                "text": "",
+                "imgurl": "http://images.udianhuo.com/Content/tempfile/131012727344768015.png",
+                "linkurl": "http://www.baidu.com",
+                "type": "0"
+            }],
+            activityData: [{
+                "title": "广告一",
+                "text": "",
+                "imgurl": "http://images.udianhuo.com/Content/tempfile/131012727344768015.png",
+                "linkurl": "http://www.baidu.com",
+                "type": "0"
+            }],
+            adData: [{
+                "title": "广告一",
+                "text": "",
+                "imgurl": "http://images.udianhuo.com/Content/tempfile/131012727344768015.png",
+                "linkurl": "http://www.baidu.com",
+                "type": "0"
+            }],
+            productFirstData: {
+                frontcover: {
+                    'imgurl': 'static/images/remai@2x.png'
+                },
+                firstdata: {
+                    "productname": "广告一",
+                    "text": "",
+                    "imgurl": "http://images.udianhuo.com/Content/tempfile/131012727344768015.png",
+                    "linkurl": "http://www.baidu.com",
+                    "price": "10"
+                }
+            },
+            productData: [
+                [{
+                    "productname": "广告一",
+                    "text": "",
+                    "imgurl": "http://images.udianhuo.com/Content/tempfile/131012727344768015.png",
+                    "linkurl": "http://www.baidu.com",
+                    "price": "10"
+                }, {
+                    "productname": "广告一",
+                    "text": "",
+                    "imgurl": "http://images.udianhuo.com/Content/tempfile/131012727344768015.png",
+                    "linkurl": "http://www.baidu.com",
+                    "price": "10"
+                }],
+                [{
+                    "productname": "广告一",
+                    "text": "",
+                    "imgurl": "http://images.udianhuo.com/Content/tempfile/131012727344768015.png",
+                    "linkurl": "http://www.baidu.com",
+                    "price": "10"
+                }, {
+                    "productname": "广告一",
+                    "text": "",
+                    "imgurl": "http://images.udianhuo.com/Content/tempfile/131012727344768015.png",
+                    "linkurl": "http://www.baidu.com",
+                    "price": "10"
+                }]
+            ],
+            onAddCart: function(e, data) {
+                e.stopPropagation();
+                e.preventDefault();
+                method.addShopCar(data.pcode, data.skucode);
+            },
+            cookbookData:{
+            	firstData:[],
+            	overData:[]
+            },
+            recommendData:[]
+
+        });
+
+        avalon.scan();
+
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            centeredSlides: true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false
+        });
+
+        var method = {
+            getData: function() {
+                $.ajax({
+                    url: url.getData,
+                    type: 'get',
+                    dataType: 'json',
+                    data: '',
+                    success: function(result) {
+                        if (result && result.code == '0') {
+                            $(result.data).each(function(index, el) {
+                                switch (el.type) {
+                                    case 0:
+                                        c_index.bannerData.push(el);
+                                        break;
+                                    case 2:
+                                        c_index.activityData.push(el);
+                                        break;
+                                    case 4:
+                                        c_index.adData.push(el);
+                                        break;
+                                }
+                            });
+
+                        }
+                    }
+                });
+
+            },
+            getProduct: function() {
+                $.ajax({
+                    url: url.getSelling,
+                    type: 'get',
+                    dataType: 'json',
+                    data: '',
+                    success: function(result) {
+                        if (result && result.code == '0') {
+                            c_index.productData = result.data;
+                        }
+                    }
+                });
+            },
+            addShopCar: function(productcode, skucode) {
+                ///Shop/User/AddShopCar
+                util.ajax('json/productinfo.json', 'post', {
+                    access_token: '18628950993',
+                    count: '1',
+                    productcode: productcode,
+                    shopcartype: '0',
+                    shopcartype: skucode
+                }, function(result) {
+                    if (result && result.code == '0') {
+                        util.toast('添加成功');
+                    } else {
+                        util.toast(result.msg);
+                    }
+                })
+            },
+            getCookbookData:function(){
+            	$.ajax({
+                    url: url.getCookbook,
+                    type: 'get',
+                    dataType: 'json',
+                    data: '',
+                    success: function(result) {
+                        if (result && result.code == '0') {
+                            for(var i=0;i<result.data.length;i++){
+                            	i<2 ? c_index.cookbookData.firstData.push(result.data[i]) : c_index.cookbookData.overData.push(result.data[i])
+                            }
+                        }
+                    }
+                });
+            },
+            getRecommendData:function(){
+                util.ajax('/Shop/Shop/GuessLike', 'get', {}, function(result) {
+                    if (result && result.code == '0') {
+                        c_index.recommendData =result.data
+                    }
+                })
+            }
+        }
+
+        method.getData();
+        method.getCookbookData();
+
+        method.getRecommendData();
+
+
+        new Roll('.main-news-list')
+
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+.reg-logo {
+  text-align: center;
+  padding: 30px 0; }
+
+.reg-form {
+  padding: 0 20px; }
+  .reg-form .list-block .item-inner:after {
+    height: 0; }
+  .reg-form .list-block .item-content {
+    padding-left: 10px; }
+  .reg-form .list-block li:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #e6e7e8;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5); }
+  .reg-form .list-block li:last-child:after {
+    height: 0; }
+  .reg-form .list-block .item-inner {
+    margin-left: 8px; }
+  .reg-form .list-block input {
+    padding: 0; }
+  .reg-form .item-input {
+    position: relative; }
+  .reg-form .send-codes {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    color: #aaa;
+    font-size: 14px; }
+  .reg-form .button {
+    font-size: 16px;
+    color: #f5f8fc;
+    padding: 5px 0;
+    height: auto;
+    line-height: auto; }
+
+.protocol {
+  font-size: 12px;
+  margin-top: 27px; }
+  .protocol label.label-checkbox i.icon-form-checkbox {
+    height: 16px;
+    width: 16px;
+    border-radius: 100%; }
+  .protocol label.label-checkbox input[type=checkbox]:checked + .item-media i.icon-form-checkbox:after, .protocol label.label-checkbox input[type=radio]:checked + .item-media i.icon-form-checkbox:after {
+    background-size: 0.5rem .45rem; }
+  .protocol label.label-checkbox input[type=checkbox]:checked + .item-media i.icon-form-checkbox, .protocol label.label-checkbox input[type=radio]:checked + .item-media i.icon-form-checkbox {
+    background: #e61e19; }
+
+.invite-reg .avter {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px auto; }
+  .invite-reg .avter img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%; }
+.invite-reg .tips {
+  text-align: center; }
+.invite-reg .reg-btn {
+  padding: 20px; }
+
+/*# sourceMappingURL=reg.css.map */

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <title>有点火</title>
+</head>
+
+<body>
+    <div class="page-group" ms-controller="page">
+        <div class="page page-current">
+            <header class="bar bar-nav bar-nav-red order-bar">
+                <a href="javascript:history.back(-1)" class="icon icon-left pull-left"></a>
+                <h1 class="title">兑换积分</h1>
+            </header>
+            <div class="content">
+                <div class="findall-ad">
+                    <img ms-attr-src="headerImg" width="100%" alt="">
+                </div>
+                <div class="redeem-info">
+                    <div class="info-list">
+                        您当前金币数量
+                        <div class="pull-right">
+                            2个
+                        </div>
+                    </div>
+                    <div class="info-list">
+                        兑换比例
+                        <div class="pull-right">
+                            40:1
+                        </div>
+                    </div>
+                    <div class="info-list">
+                        最多可兑换积分
+                        <div class="pull-right">
+                            0个
+                        </div>
+                    </div>
+                    <div class="info-list">
+                        <input type="number" class="input-line" placeholder="输入您要兑换的积分个数">
+                    </div>
+                    <div class="info-list text-center">
+                        需要金币数量
+                    </div>
+                    <div class="info-list text-center button-danger">
+                        0个
+                    </div>
+                    <div class="info-list">
+                        <a href="javascript:;" class="weui_btn weui_btn_default weui_btn_disabled">立即兑换</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['zepto', 'avalon', 'util'], function(zepto, avalon, util) {
+        var c_page = avalon.define({
+            $id: 'page',
+            headerImg:''
+        });
+        
+
+        var getHeaderImg = function(){
+            util.ajax('/Shop/Shop/IndexLook','get',{img:10},function(result){
+                if(result && result.code==0){
+                    c_page.headerImg = result.data.imgurl
+                }
+            });
+
+        }
+        getHeaderImg();
+
+        avalon.scan();
+
+
+    })
+    </script>
+</body>
+
+</html>

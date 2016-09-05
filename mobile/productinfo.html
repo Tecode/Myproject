@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" href="static/js/lib/mobile/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <link rel="stylesheet" type="text/css" href="static/js/lib/swiper/css/swiper.min.css">
+    <title>有点火</title>
+</head>
+
+<body>
+	<div class="page-group ms-controller" ms-controller="pageProductinfo">
+	    <div class="page page-current">
+            <nav class="bar bar-tab">
+                <div class="pull-right product-btngrounp">
+                    <a href="javascript:;" class="product-btn btn-yellow" ms-click="onAddCar()">加入购物车</a><a href="submitorder.html" class="product-btn btn-red">立即购买</a>
+                </div>
+            </nav>
+	        <div class="content product-info">
+				<div class="banner">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper" style="text-align:center;">
+                            <div class="swiper-slide" ms-repeat="productinfoData.images"><img ms-attr-src="el.imageurl" height="200px" alt=""></div>
+                            <div class="swiper-slide"><img src="static/images/187pic@2x.png" height="200px" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination" style="text-align:right;"></div>
+                    </div>
+                </div>
+                <div class="product-head">
+                    <div class="list-block">
+                        <h2 class="product-title">{{productinfoData.productname}}</h2>
+                    </div>
+                    <div class="list-block">
+                        <div class="price">￥{{productPrice}}</div>
+                        <div class="info"><span class="label">运费</span>{{productSalecount}}</div>
+                    </div>
+                    <div class="list-block" ms-click="onSkuShow()">
+                        <span class="label">已选</span><span>{{productSelect}}</span>
+                    </div>
+                    <div class="list-block">
+                        <span>正品保证</span>
+                        <span>快速发货</span>
+                        <span>极速退款</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="sequence productinfo-tab">
+                        <div class="buttons-row">
+                            <a href="#productDetail" class="tab-link button active">商品介绍</a>
+                            <a href="#productComment" class="tab-link button">商品评价</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tabs">
+                        <div class='tab active' id='productDetail'>
+                            <div class="product-spec">
+                                <table>
+                                    <tr ms-repeat="productInfo.standardData">
+                                        <td width="30%">{{el.specname}}</td>
+                                        <td>{{el.specvalue}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="product-info" ms-html="productInfo.imgtext"></div>
+                        </div>
+                        <div class='tab' id='productComment'>
+                            <ul class="comment-list">
+                                <li>
+                                    <div class="comment-head">
+                                        <img class="avter" src="static/images/zhixiao@2x.png" alt="">
+                                        <div class="user-info">
+                                            昵称
+                                            <span class="time">2016-02-19</span>
+                                        </div>
+                                        
+                                        <div class="pull-right score">评分
+                                            <img src="static/images/hot_selected@2x.png" alt="">
+                                            <img src="static/images/hot_selected@2x.png" alt="">
+                                            <img src="static/images/hot_selected@2x.png" alt="">
+                                            <img src="static/images/hot_selected@2x.png" alt="">
+                                            <img src="static/images/hot_selected@2x.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="comment-content">
+                                        <p>真的还不错</p>
+                                        <div class="comment-imgs">
+                                            <img src="static/images/tututu@2x.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="comment-reply">
+                                        回复：感谢亲的支持
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="comment-head">
+                                        <img class="avter" src="static/images/zhixiao@2x.png" alt="">
+                                        <div class="user-info">
+                                            昵称
+                                            <span class="time">2016-02-19</span>
+                                        </div>
+                                        
+                                        <div class="pull-right score">评分
+                                            <img src="static/images/hot_selected@2x.png" alt="">
+                                            <img src="static/images/hot_selected@2x.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="comment-content">
+                                        <p>真的还不错</p>
+                                        <div class="comment-imgs">
+                                            <img src="static/images/tututu@2x.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="comment-reply">
+                                        回复：感谢亲的支持
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 猜你喜欢 -->
+                <div class="main-recommend">
+                    <div class="recommend-title">
+                        <img src="static/images/like@2x.png" class="icon-recommend" alt="猜你喜欢">
+                        <span class="recommend-text">猜你喜欢</span>
+                    </div>
+                    <ul class="commodity-list recommend-list">
+                        <li class="commodity-item">
+                            <a class="commodity-link" href="#">
+                                <div class="commodity-image">
+                                    <img src="static/images/shangpin640.jpg" alt="">
+                                </div>
+                                <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                <div class="commodity-info">
+                                    <div class="price">￥33.3</div>
+                                    <div class="cart">
+                                        <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="commodity-item">
+                            <a class="commodity-link" href="#">
+                                <div class="commodity-image">
+                                    <img src="static/images/shangpin640.jpg" alt="">
+                                </div>
+                                <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                <div class="commodity-info">
+                                    <div class="price">￥33.3</div>
+                                    <div class="cart">
+                                        <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="commodity-item">
+                            <a class="commodity-link" href="#">
+                                <div class="commodity-image">
+                                    <img src="static/images/shangpin640.jpg" alt="">
+                                </div>
+                                <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                <div class="commodity-info">
+                                    <div class="price">￥33.3</div>
+                                    <div class="cart">
+                                        <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="commodity-item">
+                            <a class="commodity-link" href="#">
+                                <div class="commodity-image">
+                                    <img src="static/images/shangpin640.jpg" alt="">
+                                </div>
+                                <h3 class="commodity-title">【包邮】大红袍麻辣香锅底料220g</h3>
+                                <div class="commodity-info">
+                                    <div class="price">￥33.3</div>
+                                    <div class="cart">
+                                        <img class="icon-cart" src="static/images/fenlei_gouwuche@2x.png" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+	        </div>
+	    </div>
+        <div class="page-skuselect" style="display:none;">
+            <div class="mask" ms-click="onSkuHide()"></div>
+            <div class="skuselect-content">
+                <div class="sku-info">
+                    <img src="static/images/187pic@2x.png" class="product-img" alt="">
+                    <div class="sku-infodesc">
+                        <div class="price">￥{{productPrice}}</div>
+                        <p>商品编码:{{productSku}}</p>
+                    </div>
+                </div>
+                <div class="sku-select">
+                    <dl class="sku-list" ms-repeat="productSkuData">
+                        <dt class="label">{{el.name}}</dt>
+                        <dd ms-repeat="el.attr" ms-click="selectSku()" ms-attr-value="el">{{el}}</dd>
+                    </dl>
+                    <!-- <dl class="sku-list">
+                        <dt>口味</dt>
+                        <dd class="active">500g</dd>
+                        <dd>1000g</dd>
+                    </dl> -->
+                </div>
+                <a href="javascript:;" class="btn-jion" ms-click="onAddCar()">加入购物车</a>
+            </div>
+
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['sm','swiper','util','avalon'], function(sm,swiper,util,avalon) {
+
+        $.init();
+
+        var c_pageProductinfo = avalon.define({
+            $id:'pageProductinfo',
+            productinfoData:{},
+            productPrice:'',
+            productSku:'',
+            productSalecount:'',
+            productSelect:'',
+            productSelectData:{},
+            productSkuData:[],
+            productInfo:{
+                imgtext:''
+            },
+            selectSku:function(){
+                $(this).siblings('.active').removeClass('active');
+                $(this).addClass('active');
+                getSkuSpec();
+            },
+            onSkuShow:function(){
+                $('.page-skuselect').show();
+            },
+            onSkuHide:function(){
+                $('.page-skuselect').hide();
+            },
+            onAddCar:function(){
+                
+                addShopCar();
+            }
+        });
+        avalon.scan();
+
+        $.showIndicator();
+        util.ajax('json/productinfo.json','post',{pcode:''},function(result){
+            if(result && result.code=='0'){
+                c_pageProductinfo.productinfoData = result.prodbadata;
+                c_pageProductinfo.productInfo = result.weixindata;
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    centeredSlides: true,
+                    autoplay: 5000,
+                    autoplayDisableOnInteraction: false
+                });
+
+                var skucode = '1235';
+
+                var skuData = [];
+                $(c_pageProductinfo.productinfoData.skudata).each(function(index, el) {//循环sku
+                                   
+                    
+                    $(el.attribute).each(function(index, elem) {//循环所有的sku的值
+                        if(skucode == el.skucode){//获取当前选中的sku
+                            c_pageProductinfo.productPrice = (el.price*1).toFixed(2);
+                            c_pageProductinfo.productSku = el.skucode;
+                            c_pageProductinfo.productSalecount = el.salecount == '0' ? '免邮' : (el.salecount*1).toFixed(2);
+                            c_pageProductinfo.productSelect += elem.attrivalue + " ";
+                            c_pageProductinfo.productSelectData = el;
+                        }
+
+                        var is=false;
+                        skuData.map(function(skuel, m) {//在已添加的sku中排除是否已经添加该属性
+                            if(skuel.name == elem.attrname){//存在就将值添加到已有属性
+                                is = true;
+                                skuel.attr.indexOf(elem.attrivalue)<0 ? skuel.attr.push(elem.attrivalue) : '';
+                                return;
+                            }
+                        })
+                        if(!is){//不存在就添加
+                            skuData.push({
+                                name:elem.attrname,
+                                attr:[elem.attrivalue]
+                            })
+                        }
+                        
+                    });
+                    
+                });
+                c_pageProductinfo.productSkuData = skuData;
+
+                $(c_pageProductinfo.productSelectData.attribute).each(function(index, el) {
+                    $('.sku-list dd[value="'+ el.attrivalue +'"]').addClass('active');
+
+                });
+
+                $.hideIndicator();
+
+            }else{
+                $.hideIndicator();
+                util.toast('获取失败');
+            }
+        })
+        
+        //计算规格
+        var getSkuSpec = function(){
+            var attribute = [];
+            $('.sku-select dl').each(function(index, el) {
+                attribute.push({
+                    "attrname":$(el).find('dt').html(),
+                    "attrivalue":$(el).find('.active').html()
+                })
+            });
+
+            $(c_pageProductinfo.productinfoData.skudata).each(function(index, el) {
+                if(JSON.stringify(el.attribute) == JSON.stringify(attribute)){
+                    c_pageProductinfo.productPrice = (el.price*1).toFixed(2);
+                    c_pageProductinfo.productSku = el.skucode;
+                    c_pageProductinfo.productSalecount = el.salecount == '0' ? '免邮' : (el.salecount*1).toFixed(2);
+                    c_pageProductinfo.productSelect = '';
+                    $(el.attribute).each(function(index, elem) {
+                        c_pageProductinfo.productSelect += elem.attrivalue + " ";
+                    });
+                    c_pageProductinfo.productSelectData = el;
+                }
+            }); 
+        };
+
+        //添加到购物车
+        var addShopCar = function(){
+            ///Shop/User/AddShopCar
+            util.ajax('json/productinfo.json','post',{
+                contactphone:'18628950993',
+                count:'1',
+                productcode:'',
+                shopcartype:'0',
+                shopcartype:''
+            },function(result){
+                if(result && result.code=='0'){
+                    util.toast('添加成功');
+                }else{
+                    util.toast(result.msg);
+                }
+            })
+        }
+
+
+    })
+
+    </script>
+</body>
+
+</html>

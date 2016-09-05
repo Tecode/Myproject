@@ -1,0 +1,172 @@
+{
+
+    "prodbadata":
+
+    {
+
+        "productname": "有点火串串香调料",
+        "producttitle": "",
+        "expressmoney": "0",
+        "detailsurl": "http://119.29.138.14/Mobile/Mall/ProductInfo?productcode=DkMA21456813645",
+        "images":
+
+            [
+
+            {
+                "imageurl": "http://images.udianhuo.com/Content/tempfile/130989530571618248.jpg"
+            }
+
+        ],
+        "skudata": [
+
+            {
+
+                "skucode": "1231",
+                "price": "10",
+                "salecount": 0,
+                "attribute":
+
+                    [
+
+                    {
+
+                        "attrname": "重量",
+                        "attrivalue": "500g"
+
+                    },
+
+                    {
+                        "attrname": "口味",
+                        "attrivalue": "麻辣"
+                    }
+                ]
+
+            }, {
+
+                "skucode": "1232",
+                "price": "11",
+                "salecount": 0,
+                "attribute":
+
+                    [
+
+                    {
+
+                        "attrname": "重量",
+                        "attrivalue": "1000g"
+
+                    },
+
+                    {
+                        "attrname": "口味",
+                        "attrivalue": "麻辣"
+                    }
+                ]
+
+            }, {
+
+                "skucode": "1233",
+                "price": "12",
+                "salecount": 0,
+                "attribute":
+
+                    [
+
+                    {
+
+                        "attrname": "重量",
+                        "attrivalue": "500g"
+
+                    },
+
+                    {
+                        "attrname": "口味",
+                        "attrivalue": "香辣"
+                    }
+                ]
+
+            }, {
+
+                "skucode": "1234",
+                "price": "13",
+                "salecount": 0,
+                "attribute":
+
+                    [
+
+                    {
+
+                        "attrname": "重量",
+                        "attrivalue": "1000g"
+
+                    },
+
+                    {
+                        "attrname": "口味",
+                        "attrivalue": "香辣"
+                    }
+                ]
+
+            }, {
+
+                "skucode": "1235",
+                "price": "14",
+                "salecount": 0,
+                "attribute":
+
+                    [
+
+                    {
+
+                        "attrname": "重量",
+                        "attrivalue": "500g"
+
+                    },
+
+                    {
+                        "attrname": "口味",
+                        "attrivalue": "五香"
+                    }
+                ]
+
+            }, {
+
+                "skucode": "1236",
+                "price": "15",
+                "salecount":"10",
+                "attribute":
+
+                    [
+
+                    {
+
+                        "attrname": "重量",
+                        "attrivalue": "1000g"
+
+                    },
+
+                    {
+                        "attrname": "口味",
+                        "attrivalue": "五香"
+                    }
+                ]
+            }
+        ]
+    },
+    "lookdata": null,
+    "code": 0,
+    "msg": null,
+    "weixindata":{
+        "imgtext":"fdsafd",
+        "standardData":[{
+            "speccode":"111",
+            "specname":"包装方式",
+            "specvalue":"袋装"
+        },{
+            "speccode":"111",
+            "specname":"保质期",
+            "specvalue":"1年"
+        }]
+    }
+
+}

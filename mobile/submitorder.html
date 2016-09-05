@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" href="static/js/lib/mobile/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <link rel="stylesheet" type="text/css" href="static/js/lib/swiper/css/swiper.min.css">
+    <title>有点火</title>
+    <style type="text/css" media="screen">
+
+    </style>
+</head>
+
+<body>
+    <div class="page-group" ms-controller="pageSubmitourder">
+        <div class="page page-submitourder" ms-class-page-current="pageActive=='order'">
+            <header class="bar bar-nav bar-nav-red order-bar">
+                <a href="javascript:history.back(-1)" class="icon icon-left pull-left"></a>
+                <h1 class="title">提交订单</h1>
+            </header>
+            <nav class="bar bar-tab">
+                <div class="pull-left submitorder-money">
+                    <div class="clearfix">
+                        <span class="red">实付金额:￥28.00</span>
+                        <div class="pull-right money-discount">
+                            运费:￥10.00
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        商品金额:￥18.00
+                        <div class="pull-right money-discount">
+                            优惠:￥10.00
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right product-btngrounp"><a href="" class="product-btn btn-red">提交订单</a>
+                </div>
+            </nav>
+            <div class="content submitorder-content">
+                <div class="address">
+                    <div class="block">收件人：蒲正东&nbsp;&nbsp;联系电话：13012344321</div>
+                    <div>
+                        收货地址：四川省成都市科华路1号四川省成都市科华路1号四川省成都市科华路1号
+                    </div>
+                    <div class="select-address">
+                        <a href="javascript:;" style="display:block;" ms-click="onSelectPage('address')">
+                            <span class="icon icon-edit"></span>
+                            <p>修改</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="submitorder-info">
+                    <div class="block-title">
+                        订单信息
+                    </div>
+                    <div class="product-list">
+                        <div class="list-block media-list">
+                            <ul>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="product-title"><a href="static/productinfo.html">清汤麻辣火锅好吃得很好吃得不能再好吃了清汤麻辣火锅好吃得很好吃得不能再好吃了</a></div>
+                                            </div>
+                                            <div class="item-subtitle">
+                                                <span class="price">￥10.7</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="product-title"><a href="static/productinfo.html">清汤麻辣火锅好吃得很好吃得不能再好吃了清汤麻辣火锅好吃得很好吃得不能再好吃了</a></div>
+                                            </div>
+                                            <div class="item-subtitle">
+                                                <span class="price">￥10.7</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="order-other">
+                        <div class="list-block">
+                            <ul>
+                                <li class="item-content item-link">
+                                    <div class="item-inner" ms-click="onSelectPage('coupon')">
+                                        <div class="item-title">优惠券/现金券</div>
+                                        <div class="item-after">已使用5元</div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-link">
+                                    <div class="item-inner" ms-click="onSelectPage('invoice')">
+                                        <div class="item-title">发票</div>
+                                        <div class="item-after"></div>
+                                    </div>
+                                </li>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <textarea name="" placeholder="给卖家留言" style="background:#ececec;height:60px;font-size:13px;"></textarea>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id='router3' ms-class-page-current="pageActive=='address'">
+            <header class="bar bar-nav bar-nav-red order-bar">
+                <a href="javascript:;" class="back icon icon-left pull-left" ms-click="onSelectPage('order')"></a>
+                <h1 class="title">选择收货地址</h1>
+            </header>
+            <div class="content">
+                <div class="list-block media-list address-list">
+                    <ul>
+                        <li>
+                            <a href="javascript:;" class="item-link item-content" ms-click="onSelectAddress()">
+                                <div class="item-inner">
+                                    <div class="item-title-row">
+                                        <div class="item-title">收件人：蒲正东&nbsp;&nbsp;联系电话：13012344321</div>
+                                    </div>
+                                    <div class="item-subtitle">收货地址：四川省成都市科华路1号四川省成都市科华路1号四川省成都市科华路1号</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="item-link item-content">
+                                <div class="item-inner">
+                                    <div class="item-title-row">
+                                        <div class="item-title">收件人：蒲正东&nbsp;&nbsp;联系电话：13012344321</div>
+                                    </div>
+                                    <div class="item-subtitle">收货地址：四川省成都市科华路1号四川省成都市科华路1号四川省成都市科华路1号</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div style="padding:69px 25px;">
+                    <a href="static/" class="button button-big button-fill button-danger">添加新地址</a>
+                </div>
+            </div>
+        </div>
+        <div class="page" id='router4' ms-class-page-current="pageActive=='coupon'">
+            <header class="bar bar-nav bar-nav-red order-bar">
+                <a href="javascript:;" class="back icon icon-left pull-left" ms-click="onSelectPage('order')"></a>
+                <h1 class="title">选择优惠券</h1>
+            </header>
+            <div class="content">
+                <div class="list-block media-list address-list">
+                    <div class="card-list">
+                        <ul>
+                            <li class="card-coupon">
+                                <img class="card-bg" src="static/images/youhui_kaquan@2x.png" style="width:100%;" alt="">
+                                <div class="card-info">
+                                    <div class="card-caption">
+                                        <div class="price">￥200</div>
+                                        <p>截至时间:2016年1月20日</p>
+                                        <p>购买指定商品满400可用</p>
+                                    </div>
+                                    <div class="card-type-text">
+                                        <span class="type-inner">优惠券</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id='router5' ms-class-page-current="pageActive=='invoice'">
+            <header class="bar bar-nav bar-nav-red order-bar">
+                <a href="javascript:;" class="back icon icon-left pull-left" ms-click="onSelectPage('order')"></a>
+                <h1 class="title">发票信息</h1>
+            </header>
+            <div class="content submitorder-form-list">
+                <div class="content-block">
+                    <div class="buttons-row">
+                        <a href="#tab1-1" class="tab-link active button">个人</a>
+                        <a href="#tab1-2" class="tab-link button">公司</a>
+                    </div>
+                    <div class="tabs">
+                        <div class='tab active' id='tab1-1'>
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">发票抬头</div>
+                                                <div class="item-input">
+                                                    <input type="text" placeholder="请输入发票抬头">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class='tab' id='tab1-2'>
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">发票抬头</div>
+                                                <div class="item-input">
+                                                    <input type="text" placeholder="请输入发票抬头">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">电话号码</div>
+                                                <div class="item-input">
+                                                    <input type="text" placeholder="请输入电话号码">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">开户帐号</div>
+                                                <div class="item-input">
+                                                    <input type="text" placeholder="请输入开户帐号">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">开户银行</div>
+                                                <div class="item-input">
+                                                    <input type="text" placeholder="请输入开户银行">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">纳税人识别号</div>
+                                                <div class="item-input">
+                                                    <input type="text" placeholder="请输入纳税人识别号">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">地址</div>
+                                                <div class="item-input">
+                                                    <input type="text" placeholder="请输入地址">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-block">
+                    <a href="" class="button button-fill button-danger">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['sm', 'avalon', 'util'], function(sm, avalon, util) {
+        $.init();
+
+        var c_pageSubmitourder = avalon.define({
+            $id: 'pageSubmitourder',
+            pageActive: 'order',
+            onSelectPage: function(page) {
+                c_pageSubmitourder.pageActive = page;
+            },
+            onSelectAddress: function() {
+                c_pageSubmitourder.onSelectPage('order');
+            }
+        });
+        avalon.scan();
+    })
+    </script>
+</body>
+
+</html>

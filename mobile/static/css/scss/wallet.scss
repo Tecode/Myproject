@@ -1,0 +1,47 @@
+.wallet-head{
+	text-align: left;
+	position: relative;
+	clear: both;
+	overflow: hidden;
+	padding-top: 10px;
+	.head-link-rule{
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		color:#fff;
+		font-size: 14px;
+	}
+	.avter{
+		margin:26px 0 0 16px;
+		float: left;
+	}
+	.user-info{
+		padding:35px 0 0 88px;
+	}
+}
+
+.wallet-tab{
+	.buttons-tab{
+		background:#ececec;
+		color:#252525;
+	}
+}
+.wallet-list{
+	.list-block{
+		margin:0;
+	}
+	.content-block-title{
+		margin:14px 27px;
+	}
+	.item-title-row{
+		height: 2.2rem;
+		line-height: 2.2rem;
+	}
+}
+
+.balance-list{
+	.item-title-row{
+		height: 1.4rem;
+		line-height: 1.4rem;
+	}
+}

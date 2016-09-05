@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" href="static/js/lib/mobile/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <title>有点火</title>
+    <style>
+    body{
+        background: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="page page-reg ms-controller" ms-controller="pageReg">
+        <div class="reg-logo">
+            <img src="static/images/logo@2x.png" width="90" alt="">
+        </div>
+        <div class="reg-form">
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/shouji@2x.png" width="10" alt="">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input type="text" placeholder="手机号" ms-duplex="userInfo.mobile">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/yanzheng@2x.png" width="10" alt="">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input type="text" placeholder="验证码" ms-duplex="userInfo.code">
+                                    <div class="send-codes" ms-click="onSendCodes()">{{codeTitle}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/mima@2x.png" width="10" alt="">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input type="password" placeholder="密码" class="" ms-duplex="userInfo.password">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <a href="javascript:;" class="button button-fill button-danger" ms-click="onReg()">注册</a>
+            <div for="" class="protocol">
+            <label class="label-checkbox item-content">
+                <input type="checkbox" name="checkbox" value='1'>
+                <div class="item-media">
+                    <i class="icon icon-form-checkbox"></i>
+                    注册代表您已同意<a href="" style="color:#e61e19;">有点火用户协议</a>
+                </div>
+            </label>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js" data-main="module/reg.js"></script>
+    <script>
+    
+    </script>
+</body>
+
+</html>

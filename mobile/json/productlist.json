@@ -1,0 +1,98 @@
+{
+
+    "page": 
+
+{
+
+    "pageindex": 1,
+    "pagesize": 10,
+    "pagecount": 0
+
+},
+"data": 
+[
+
+{
+
+    "productname": "有点火串串香调料香辣1000g",
+    "price": "10",
+    "imgurl": "http://images.udianhuo.com/Content/tempfile/130989530571618248.jpg",
+    "count": 0,
+    "pcode": "DkMA21456813645",
+    "skucode": "1234"
+
+},
+{
+
+    "productname": "有点火串串香调料香辣500g",
+    "price": "10",
+    "imgurl": "http://images.udianhuo.com/Content/tempfile/130989530571618248.jpg",
+    "count": 0,
+    "pcode": "DkMA21456813645",
+    "skucode": "1233"
+
+},
+{
+
+    "productname": "有点火串串香调料麻辣1000g",
+    "price": "10",
+    "imgurl": "http://images.udianhuo.com/Content/tempfile/130989530571618248.jpg",
+    "count": 0,
+    "pcode": "DkMA21456813645",
+    "skucode": "1232"
+
+},
+{
+
+    "productname": "有点火串串香调料麻辣500g",
+    "price": "10",
+    "imgurl": "http://images.udianhuo.com/Content/tempfile/130989530571618248.jpg",
+    "count": 0,
+    "pcode": "DkMA21456813645",
+    "skucode": "1231"
+
+},
+{
+
+    "productname": "有点火串串香调料五香1000g",
+    "price": "10",
+    "imgurl": "http://images.udianhuo.com/Content/tempfile/130989530571618248.jpg",
+    "count": 0,
+    "pcode": "DkMA21456813645",
+    "skucode": "1236"
+
+},
+{
+
+    "productname": "有点火串串香调料五香500g",
+    "price": "10",
+    "imgurl": "http://images.udianhuo.com/Content/tempfile/130989530571618248.jpg",
+    "count": 0,
+    "pcode": "DkMA21456813645",
+    "skucode": "1235"
+
+},
+{
+
+    "productname": "冒菜10g",
+    "price": "11",
+    "imgurl": "",
+    "count": 0,
+    "pcode": "4EWSC1456903477",
+    "skucode": "12345"
+
+},
+
+        {
+            "productname": "火锅干锅调料固态",
+            "price": "1000",
+            "imgurl": "http://images.udianhuo.com/Content/tempfile/130989530571618248.jpg",
+            "count": 0,
+            "pcode": "f2RfR1456637755",
+            "skucode": "ewr23213"
+        }
+    ],
+    "code": 0,
+    "msg": "成功"
+
+}

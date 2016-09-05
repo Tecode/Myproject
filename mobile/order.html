@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="static/js/lib/mobile/css/sm.min.css">
+    <link rel="stylesheet" href="static/js/lib/mobile/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/tw.css">
+    <link rel="stylesheet" type="text/css" href="static/js/lib/swiper/css/swiper.min.css">
+    <title>有点火</title>
+    <style>
+.buttons-tab{
+    overflow: scroll;
+}
+    </style>
+}
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page page-current">
+            <header class="bar bar-nav bar-nav-red order-bar">
+                <a href="javascript:history.back(-1)" class="icon icon-left pull-left"></a>
+                <a class="icon icon-search pull-right"></a>
+                <h1 class="title">我的订单</h1>
+            </header>
+            <div class="bar bar-header-secondary order-tab">
+                <div class="buttons-tab" ms-controller="ordertab">
+                    <a href="#tab1" class="tab-link button" ms-class-active="active=='all'" ms-click="cheageTab('all')">全部</a>
+                    <a href="#tab2" class="tab-link button" ms-class-active="active=='2'" ms-click="cheageTab('2')">待付款</a>
+                    <a href="#tab3" class="tab-link button" ms-class-active="active=='3'" ms-click="cheageTab('3')">待发货</a>
+                    <a href="#tab4" class="tab-link button" ms-class-active="active=='4'" ms-click="cheageTab('4')">待收货</a>
+                    <a href="#tab4" class="tab-link button" ms-class-active="active=='4'" ms-click="cheageTab('4')">待评价</a>
+                    <a href="#tab5" class="tab-link button" ms-class-active="active=='5'" ms-click="cheageTab('5')">售后</a>
+                </div>
+            </div>
+            <div class="content find-content infinite-scroll infinite-scroll-bottom">
+                <div class="page-current">
+                    <div class="order-list">
+                        <div class="order-block">
+                            <div class="order-head">待发货</div>
+                            <div class="order-content">
+                                <div class="list-block media-list">
+                                    <ul>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">四川天味食品麻辣调料真的是还不错的一种选择四川天味食品麻辣调料真的是还不错的一种选择</div>
+                                                        <div class="item-after">
+                                                            <div>￥:112.0</div>
+                                                            <div>x20</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">四川天味食品麻辣调料真的是还不错的一种选择四川天味食品麻辣调料真的是还不错的一种选择</div>
+                                                        <div class="item-after">
+                                                            <div>￥:112.0</div>
+                                                            <div>x20</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="order-price">
+                                金额:<span class="order-price-info">￥:11.00</span>
+                            </div>
+                            <div class="order-foot">
+                                <a href="#" class="button button-dark">联系客服</a>
+                                <a href="#" class="button button-dark">取消订单</a>
+                                <a href="#" class="button button-danger">立即付款</a>
+                            </div>
+                        </div>
+                        <div class="order-block">
+                            <div class="order-head">待发货</div>
+                            <div class="order-content">
+                                <div class="list-block media-list">
+                                    <ul>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">四川天味食品麻辣调料真的是还不错的一种选择四川天味食品麻辣调料真的是还不错的一种选择</div>
+                                                        <div class="item-after">
+                                                            <div>￥:112.0</div>
+                                                            <div>x20</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">四川天味食品麻辣调料真的是还不错的一种选择四川天味食品麻辣调料真的是还不错的一种选择</div>
+                                                        <div class="item-after">
+                                                            <div>￥:112.0</div>
+                                                            <div>x20</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="order-price">
+                                金额:<span class="order-price-info">￥:11.00</span>
+                            </div>
+                            <div class="order-foot">
+                                <a href="#" class="button button-dark">联系客服</a>
+                                <a href="#" class="button button-dark">取消订单</a>
+                                <a href="#" class="button button-danger">立即付款</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infinite-scroll-preloader">
+                        <div class="preloader"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/require.config.js"></script>
+    <script src="static/js/require.js"></script>
+    <script>
+    require(['sm', 'avalon'], function(sm, avalon) {
+
+        $.init();
+
+        var vmOrderTab;
+        vmOrderTab = avalon.define({
+            $id: 'ordertab',
+            active: 'all',
+            cheageTab: function(tab) {
+                vmOrderTab.active = tab;
+            }
+        });
+        avalon.scan();
+
+
+        var loading = false;
+
+
+        // 注册'infinite'事件处理函数
+        $(document).on('infinite', '.infinite-scroll-bottom', function() {
+
+            // 如果正在加载，则退出
+            if (loading) return;
+
+            $('.infinite-scroll-preloader').show();
+            // 设置flag
+            loading = true;
+
+            // 模拟1s的加载过程
+            setTimeout(function() {
+                // 重置加载flag
+                loading = false;
+
+                // 添加新条目
+                getProduct({
+                    pageindex:classPage.pageindex,
+                    pagesize:classPage.pagesize,
+                    sortname:'',
+                    strwhere:c_pageClass.activeClass
+                });
+
+
+                // 更新最后加载的序号
+                lastIndex = $('.list-container li').length;
+                //容器发生改变,如果是js滚动，需要刷新滚动
+                $.refreshScroller();
+            }, 1000);
+        });
+
+
+    })
+    </script>
+</body>
+
+</html>
